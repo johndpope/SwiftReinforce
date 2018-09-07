@@ -16,6 +16,7 @@ Take the following steps to install OpenAI Gym using Virtualenv:
       
      
 ## Install these for gymai
+(if sdl2 fails / try proceeding without it)
 ```
 brew install cmake boost boost-python sdl2 swig wget
 ```
