@@ -35,6 +35,7 @@ pip install --upgrade pip
 brew install cmake boost boost-python sdl2 swig wget
 git clone https://github.com/openai/gym.git
 cd gym
+make    
 pip install -e '.[all]'
 
 python
