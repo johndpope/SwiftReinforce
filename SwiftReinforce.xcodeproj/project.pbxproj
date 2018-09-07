@@ -17,6 +17,7 @@
 		5C0A18282117A46F002F03E0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A18242117A46F002F03E0 /* Utilities.swift */; };
 		5C0A18292117A46F002F03E0 /* Array+NumPy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A18252117A46F002F03E0 /* Array+NumPy.swift */; };
 		5C0A182B2117AC09002F03E0 /* libpython2.7.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C0A182A2117AC09002F03E0 /* libpython2.7.tbd */; };
+		83247C1F2142B36900F7EBBD /* FrozenLakeRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A181F2117A3A8002F03E0 /* FrozenLakeRunner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -177,11 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83247C1F2142B36900F7EBBD /* FrozenLakeRunner.swift in Sources */,
 				5C0A18282117A46F002F03E0 /* Utilities.swift in Sources */,
 				5C0A181021179636002F03E0 /* main.swift in Sources */,
 				5C0A18202117A3A8002F03E0 /* PongRunner.swift in Sources */,
 				5C0A18272117A46F002F03E0 /* StatsRecorder.swift in Sources */,
-				5C0A18212117A3A8002F03E0 /* FrozenLakeRunner.swift in Sources */,
 				5C0A18262117A46F002F03E0 /* Model.swift in Sources */,
 				5C0A18292117A46F002F03E0 /* Array+NumPy.swift in Sources */,
 			);
@@ -226,7 +227,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTABILITY = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;

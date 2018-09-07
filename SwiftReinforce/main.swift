@@ -39,11 +39,17 @@ func runFrozenLake() {
 }
 
 func runPong() {
-    let gym = Python.import("gym")
+   
     let sys = Python.import("sys")
-    
-    let path = "\(NSHomeDirectory())/gym/lib/python2.7/site-packages/"
+    /*
+ conda create -n gymai  python=2.7.9
+ source activate gymai
+ pip install --upgrade pip
+ pip install "gym[atari]"
+ */
+    let path = "/Users/\(NSUserName())/miniconda2/envs/gymai/lib/python2.7/site-packages/"
     sys.path.append(path)
+     let gym = Python.import("gym")
     
     let env = gym.make("Pong-v4")
     env.seed(0)
@@ -60,8 +66,8 @@ func runPong() {
 }
 
 func main() {
-    runFrozenLake()
-    //runPong()
+//    runFrozenLake()
+    runPong()
 }
 
 main()

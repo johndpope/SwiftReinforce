@@ -31,11 +31,11 @@ class FrozenLakeRunner {
         ) {
         
         self.discountRate = discountRate
-        statsRecorder = StatsRecorder(summaryFrequency: summaryFrequency,
+        self.statsRecorder = StatsRecorder(summaryFrequency: summaryFrequency,
                                       performanceNumEpisodes: performanceNumEpisodes)
         
         self.timesteps = timesteps
-        network = Model(observationSpace: Int32(observationSpace),
+        self.network = Model(observationSpace: Int32(observationSpace),
                                     actionSpace: Int32(actionSpace),
                                     learningRate: learningRate,
                                     hiddenUnits:128,
