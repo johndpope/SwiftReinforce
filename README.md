@@ -45,11 +45,14 @@ python
 
 
 
-CONDA - NOT WORKING     
+## CONDA     - critical use 2.7.9 to avoid missing python symbols
+https://stackoverflow.com/questions/34386527/symbol-not-found-pycodecinfo-getincrementaldecoder
+
 ```
-conda create -n gymai  python=2.7
+conda create -n gymai  python=2.7.9
 source activate gymai
 pip install --upgrade pip
+pip install "gym[atari]"
 ```
 
 ## Results
