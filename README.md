@@ -39,10 +39,10 @@ To connect the conda environment / (which has been activated) - we need to confi
 schema >  wait for executable to be launched.
       
 ## (Cmd+R - will NOW wait for you to drop into terminal)    
-https://user-images.githubusercontent.com/289994/45244355-6786f780-b2c5-11e8-9ed7-c379b70974b4.png
+![alt text](https://user-images.githubusercontent.com/289994/45244355-6786f780-b2c5-11e8-9ed7-c379b70974b4.png)
 
 To find the executable build path - right mouse click on target - and find the binary
-https://user-images.githubusercontent.com/289994/45244356-6786f780-b2c5-11e8-883a-17c02bf22d91.png
+![alt text](https://user-images.githubusercontent.com/289994/45244356-6786f780-b2c5-11e8-883a-17c02bf22d91.png)
 
 
 ```
