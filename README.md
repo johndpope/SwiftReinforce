@@ -45,7 +45,7 @@ schema >  wait for executable to be launched.
 
 
 To find the executable build path - right mouse click on target - and find the binary
-![alt text](https://user-images.githubusercontent.com/289994/45244355-6786f780-b2c5-11e8-9ed7-c379b70974b4.png | width=300)    
+![alt text](https://user-images.githubusercontent.com/289994/45244355-6786f780-b2c5-11e8-9ed7-c379b70974b4.png|width=300)    
 
 Just drag the file into terminal to copy the path. now use source activate to configure python envronment
 
