@@ -24,13 +24,13 @@ source ./bin/activate
 ```
 
 3. Install OpenAI Gym into the active Virtualenv:
-``
-pip install "gym[atari]" // didn't install pong-v4 for me
+```     
+pip install "gym[atari]"     
+```    
+      
+     
+4. OPTIONAL if above doesn't successfully install pong-v4     
 ```
-
-
-4. OPTIONAL if above doesn't successfully install pong-v4
-
 pip install --upgrade pip
 brew install cmake boost boost-python sdl2 swig wget
 git clone https://github.com/openai/gym.git
@@ -40,6 +40,7 @@ pip install -e '.[all]'
 python
 >> import gym
 >> gym.make("Pong-v4")
+```
 
 ## Results
 ### FrozenLake
