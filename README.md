@@ -13,20 +13,49 @@ Make sure to change the Xcode build system to legacy (File > Project Settings > 
 ## Install OpenAI Gym
 Take the following steps to install OpenAI Gym using Virtualenv:
 
-1. Create a Virtualenv environment:
+      
+     
+## Install these for gymai
+(if sdl2 fails / try proceeding without it)
 ```
-virtualenv --system-site-packages gym
-```
-2. Activate the Virtualenv environment:
-```
-cd gym
-source ./bin/activate
+brew install cmake boost boost-python sdl2 swig wget
 ```
 
-3. Install OpenAI Gym into the active Virtualenv:
+
+## CONDA     - critical use 2.7.9 to avoid missing python symbols  (__PyCodecInfo_GetIncrementalDecoder)     
+https://conda.io/docs/_downloads/conda-cheatsheet.pdf     
+      
 ```
-pip install gym[atari]
+conda create -n gymai  python=2.7.9
+source activate gymai
+pip install --upgrade pip
+pip install "gym[atari]"
+
 ```
+     
+     
+     
+To connect the conda environment / (which has been activated) - we need to configure  
+         
+schema >  wait for executable to be launched.
+      
+## (Cmd+R - will NOW wait for you to drop into terminal)  
+![alt text](https://user-images.githubusercontent.com/289994/45244356-6786f780-b2c5-11e8-883a-17c02bf22d91.png)    
+
+
+To find the executable build path - right mouse click on target - and find the binary
+![alt text](https://user-images.githubusercontent.com/289994/45244355-6786f780-b2c5-11e8-9ed7-c379b70974b4.png)    
+
+Just drag the file into terminal to copy the path. now use source activate to configure python envronment
+
+```
+source activate gymai
+/SwiftReinforce
+```
+
+(iterm2 / to see which python environment is activated / as well as which git branch you're on - I recommend using zsh / oh-my-zsh https://github.com/robbyrussell/oh-my-zsh)
+![alt text](https://user-images.githubusercontent.com/289994/45244296-37d7ef80-b2c5-11e8-81c3-e8e59afe234f.png)
+
 
 ## Results
 ### FrozenLake
