@@ -50,7 +50,7 @@ Just drag the file into terminal to copy the path. now use source activate to co
 
 ```
 source activate gymai
-/SwiftReinforce
+./SwiftReinforce
 ```
 
 (iterm2 / to see which python environment is activated / as well as which git branch you're on - I recommend using zsh / oh-my-zsh https://github.com/robbyrussell/oh-my-zsh)
