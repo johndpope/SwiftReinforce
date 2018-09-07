@@ -13,47 +13,45 @@ Make sure to change the Xcode build system to legacy (File > Project Settings > 
 ## Install OpenAI Gym
 Take the following steps to install OpenAI Gym using Virtualenv:
 
-1. Create a Virtualenv environment:
-```
-virtualenv --system-site-packages gym
-```
-2. Activate the Virtualenv environment:
-```
-cd gym
-source ./bin/activate
-```
-
-3. Install OpenAI Gym into the active Virtualenv:
-```     
-pip install "gym[atari]"     
-```    
       
      
-4. OPTIONAL if above doesn't successfully install pong-v4     
+## Install these for gymai
 ```
-pip install --upgrade pip
 brew install cmake boost boost-python sdl2 swig wget
-git clone https://github.com/openai/gym.git
-cd gym
-make    
-pip install -e '.[all]'
-
-python
->> import gym
->> gym.make("Pong-v4")
 ```
 
 
-
-## CONDA     - critical use 2.7.9 to avoid missing python symbols
-https://stackoverflow.com/questions/34386527/symbol-not-found-pycodecinfo-getincrementaldecoder
-
+## CONDA     - critical use 2.7.9 to avoid missing python symbols  (__PyCodecInfo_GetIncrementalDecoder)     
+https://conda.io/docs/_downloads/conda-cheatsheet.pdf     
+      
 ```
 conda create -n gymai  python=2.7.9
 source activate gymai
 pip install --upgrade pip
 pip install "gym[atari]"
+
 ```
+     
+     
+     
+To connect the conda environment / (which has been activated) - we need to configure  
+         
+schema >  wait for executable to be launched.
+      
+## (Cmd+R - will NOW wait for you to drop into terminal)    
+https://user-images.githubusercontent.com/289994/45244355-6786f780-b2c5-11e8-9ed7-c379b70974b4.png
+
+To find the executable build path - right mouse click on target - and find the binary
+https://user-images.githubusercontent.com/289994/45244356-6786f780-b2c5-11e8-883a-17c02bf22d91.png
+
+
+```
+source activate gymai
+/SwiftReinforce
+```
+
+![alt text](https://user-images.githubusercontent.com/289994/45244296-37d7ef80-b2c5-11e8-81c3-e8e59afe234f.png)
+
 
 ## Results
 ### FrozenLake
