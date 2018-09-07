@@ -43,6 +43,15 @@ python
 >> gym.make("Pong-v4")
 ```
 
+
+
+CONDA - NOT WORKING     
+```
+conda create -n gymai  python=2.7
+source activate gymai
+pip install --upgrade pip
+```
+
 ## Results
 ### FrozenLake
 ```
