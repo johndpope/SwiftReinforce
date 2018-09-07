@@ -98,7 +98,7 @@ struct Model: Parameterized {
         let rewardsTensor = Tensor<Float>(rewards)
         
         let losses = rewardsTensor * selectedLogActionProbsSum
-        let loss = losses.mean(alongAxes: 0)
+//        let loss = losses.mean(alongAxes: 0)
         
         let d6 = Tensor<Float>(Float(1)/Float(batchSize))
         
