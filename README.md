@@ -25,7 +25,7 @@ source ./bin/activate
 
 3. Install OpenAI Gym into the active Virtualenv:
 ```
-pip install gym[atari]
+pip install "gym[atari]"
 ```
 
 ## Results
