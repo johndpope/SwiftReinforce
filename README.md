@@ -37,9 +37,12 @@ pip install "gym[atari]"
      
 To connect the conda environment / (which has been activated) - we need to configure  
          
-schema >  wait for executable to be launched.
+schema >  wait for executable to be launched.     
+## (Cmd+R - will NOW wait for you to drop into terminal)   
+     
+![alt text](https://user-images.githubusercontent.com/289994/45247646-fd774e00-b2d6-11e8-8058-b96a1ff6f270.png)
       
-## (Cmd+R - will NOW wait for you to drop into terminal)  
+
 ![alt text](https://user-images.githubusercontent.com/289994/45244356-6786f780-b2c5-11e8-883a-17c02bf22d91.png)    
 
 
