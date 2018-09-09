@@ -61,9 +61,10 @@ source activate gymai
 
 **Troubleshooting**    
 if you see     
-Fatal error: 'try!' expression unexpectedly raised an error: Python exception: dlopen(/Users/johndpope/miniconda2/lib/python2.7/lib-dynload/_io.so, 2): Symbol not found: 
+Fatal error: 'try!' expression unexpectedly raised an error: Python exception: dlopen(/Users/johndpope/miniconda2/lib/python2.7/lib-dynload/_io.so, 2): Symbol not found:      
+__PyCodecInfo_GetIncrementalDecoder    
+     
 try source activate gymai
-__PyCodecInfo_GetIncrementalDecoder
 ![alt text](https://user-images.githubusercontent.com/289994/45266081-83081480-b423-11e8-8e06-57c0e4c27c63.png) 
 
 
