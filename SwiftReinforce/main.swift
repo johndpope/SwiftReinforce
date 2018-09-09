@@ -41,17 +41,20 @@ func runFrozenLake() {
 func runPong() {
    
     let sys = Python.import("sys")
-    /*
- conda create -n gymai  python=2.7.9
- source activate gymai
- pip install --upgrade pip
- pip install "gym[atari]"
- */
     let path = "/Users/\(NSUserName())/miniconda2/envs/gymai/lib/python2.7/site-packages/"
     sys.path.append(path)
      let gym = Python.import("gym")
-    
+
     let env = gym.make("Pong-v4")
+    // if you see - Thread 1: Fatal error: 'try!' expression unexpectedly raised an error: Python exception: Env Pong-v4 not found (valid versions include ['Pong-v3', 'Pong-v0'])
+    /*
+     conda create -n gymai  python=2.7.9
+     source activate gymai
+     pip install --upgrade pip
+     pip install "gym[atari]"
+     */
+    // see here -> https://github.com/johndpope/SwiftReinforce
+    
     env.seed(0)
     let runner = PongRunner(env: env,
                             observationSpace: 80 * 80,
