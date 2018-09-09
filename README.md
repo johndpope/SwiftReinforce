@@ -58,6 +58,15 @@ source activate gymai
 ![alt text](https://user-images.githubusercontent.com/289994/45244296-37d7ef80-b2c5-11e8-81c3-e8e59afe234f.png)
 
 
+
+**Troubleshooting**    
+if you see     
+Fatal error: 'try!' expression unexpectedly raised an error: Python exception: dlopen(/Users/johndpope/miniconda2/lib/python2.7/lib-dynload/_io.so, 2): Symbol not found: 
+try source activate gymai
+__PyCodecInfo_GetIncrementalDecoder
+![alt text](https://user-images.githubusercontent.com/289994/45266081-83081480-b423-11e8-8e06-57c0e4c27c63.png) 
+
+
 ## Results
 ### FrozenLake
 ```
