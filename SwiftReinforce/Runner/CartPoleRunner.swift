@@ -2,7 +2,7 @@
 //  PongRunner.swift
 //  SwiftReinforce
 //
-//  Created by Sascha Schramm on 09.07.18.
+//  Created byJohn Pope
 //  Copyright © 2018 Sascha Schramm. All rights reserved.
 //
 
@@ -10,7 +10,9 @@ import Python
 import Foundation
 import TensorFlow
 
-class PongRunner {
+// https://gym.openai.com/envs/CartPole-v0/
+// https://github.com/openai/gym/wiki/Leaderboard#cartpole-v0
+class CartPoleRunner {
     var env: PythonObject
     var batchSize: Int
     var discountRate: Float
@@ -54,22 +56,38 @@ class PongRunner {
         self.batchSize = batchSize
     }
     
+    /*
+ def prepro(I):
+ """ prepro 210x160x3 uint8 frame into 6400 (80x80) 1D float vector """
+ I = I[35:195]  # crop
+ I = I[::2, ::2, 0]  # downsample by factor of 2
+ I[I == 144] = 0  # erase background (background type 1)
+ I[I == 109] = 0  # erase background (background type 2)
+ I[I != 0] = 1  # everything else (paddles, ball) just set to 1
+ return I.astype(np.float).ravel()
+
+ */
     func preprocess(_ step: PythonObject) -> [Float] {
+//            print("observation n:",step)
         let numpyArray: PythonObject = step[35..<195]
         let observation: [UInt8] = Array<UInt8>(numpyArray: numpyArray)!
         
-        renderPixels(observation,rows:160,cols:160)
-        var preprocessedImage = [Float](repeating: 0, count: 80 * 80)
-        for i in stride(from: 0, to: 160, by: 2) {
-            for j in stride(from: 0, to: 160, by: 2) {
-                let index = (i * 160 + j)
-                let oldIndex = index * 3
-                let newIndex = i/2 * 80 + j/2
-                preprocessedImage[newIndex] = transform(observation[oldIndex])
+        if observation.count > 0 {
+            var preprocessedImage = [Float](repeating: 0, count: 80 * 80)
+            for i in stride(from: 0, to: 160, by: 2) {
+                for j in stride(from: 0, to: 160, by: 2) {
+                    let index = (i * 160 + j)
+                    let oldIndex = index * 3
+                    let newIndex = i/2 * 80 + j/2
+                    //                preprocessedImage[newIndex] = transform(observation[oldIndex])
+                }
             }
+            return preprocessedImage
         }
-    
-        return preprocessedImage
+      
+        return [0.0]
+        
+      
     }
     
     func run() {
@@ -104,6 +122,7 @@ class PongRunner {
             let done = Bool(step[2])!
             let reward = Float(step[1])!
             
+
             statsRecorder.afterStep(reward: Double(reward), done: done, t: t)
             rewards.append(reward)
             dones.append(done)

@@ -7,17 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		171B00612146B06700AC88D9 /* libtensorflow_framework.so in Frameworks */ = {isa = PBXBuildFile; fileRef = 171B005F2146B06700AC88D9 /* libtensorflow_framework.so */; };
+		171B00622146B06700AC88D9 /* libtensorflow.so in Frameworks */ = {isa = PBXBuildFile; fileRef = 171B00602146B06700AC88D9 /* libtensorflow.so */; };
+		17D5E1D721482AB40070476D /* CartPoleRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5E1D621482AB40070476D /* CartPoleRunner.swift */; };
+		17D5E21D214840830070476D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5E21C214840830070476D /* AppDelegate.swift */; };
+		17D5E21F214840860070476D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17D5E21E214840860070476D /* Assets.xcassets */; };
+		17D5E222214840860070476D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17D5E220214840860070476D /* MainMenu.xib */; };
+		17D5E2292148412C0070476D /* CartPoleRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5E1D621482AB40070476D /* CartPoleRunner.swift */; };
+		17D5E22A2148412F0070476D /* FrozenLakeRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A181F2117A3A8002F03E0 /* FrozenLakeRunner.swift */; };
+		17D5E22B2148412F0070476D /* PongRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A181E2117A3A8002F03E0 /* PongRunner.swift */; };
+		17D5E22C214841320070476D /* Array+NumPy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A18252117A46F002F03E0 /* Array+NumPy.swift */; };
+		17D5E22D214841320070476D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1421412143D07C004F4CCA /* Model.swift */; };
+		17D5E22E214841320070476D /* StatsRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A18232117A46F002F03E0 /* StatsRecorder.swift */; };
+		17D5E22F214841320070476D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A18242117A46F002F03E0 /* Utilities.swift */; };
+		17D5E2312148417D0070476D /* MainRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5E2302148417D0070476D /* MainRunner.swift */; };
+		17D5E232214841B80070476D /* MainRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5E2302148417D0070476D /* MainRunner.swift */; };
 		5C0A181021179636002F03E0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A180F21179636002F03E0 /* main.swift */; };
 		5C0A18202117A3A8002F03E0 /* PongRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A181E2117A3A8002F03E0 /* PongRunner.swift */; };
 		5C0A18212117A3A8002F03E0 /* FrozenLakeRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A181F2117A3A8002F03E0 /* FrozenLakeRunner.swift */; };
-		5C0A18262117A46F002F03E0 /* DEPRECATEDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A18222117A46F002F03E0 /* DEPRECATEDModel.swift */; };
 		5C0A18272117A46F002F03E0 /* StatsRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A18232117A46F002F03E0 /* StatsRecorder.swift */; };
 		5C0A18282117A46F002F03E0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A18242117A46F002F03E0 /* Utilities.swift */; };
 		5C0A18292117A46F002F03E0 /* Array+NumPy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A18252117A46F002F03E0 /* Array+NumPy.swift */; };
 		5C0A182B2117AC09002F03E0 /* libpython2.7.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C0A182A2117AC09002F03E0 /* libpython2.7.tbd */; };
 		5C1421422143D07C004F4CCA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1421412143D07C004F4CCA /* Model.swift */; };
-		5C1421452143D519004F4CCA /* libtensorflow_framework.so in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1421432143D519004F4CCA /* libtensorflow_framework.so */; };
-		5C1421462143D519004F4CCA /* libtensorflow.so in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1421442143D519004F4CCA /* libtensorflow.so */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,44 +45,69 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		171B005F2146B06700AC88D9 /* libtensorflow_framework.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtensorflow_framework.so; path = "../../../../../Library/Developer/Toolchains/swift-tensorflow-DEVELOPMENT-2018-08-15-a.xctoolchain/usr/lib/swift/macosx/libtensorflow_framework.so"; sourceTree = "<group>"; };
+		171B00602146B06700AC88D9 /* libtensorflow.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtensorflow.so; path = "../../../../../Library/Developer/Toolchains/swift-tensorflow-DEVELOPMENT-2018-08-15-a.xctoolchain/usr/lib/swift/macosx/libtensorflow.so"; sourceTree = "<group>"; };
+		17D5E1D621482AB40070476D /* CartPoleRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartPoleRunner.swift; sourceTree = "<group>"; };
+		17D5E21A214840830070476D /* SwiftReinforceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftReinforceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17D5E21C214840830070476D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		17D5E21E214840860070476D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		17D5E221214840860070476D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		17D5E223214840860070476D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17D5E224214840860070476D /* Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Test.entitlements; sourceTree = "<group>"; };
+		17D5E2302148417D0070476D /* MainRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRunner.swift; sourceTree = "<group>"; };
 		5C0A180C21179636002F03E0 /* SwiftReinforce */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftReinforce; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C0A180F21179636002F03E0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		5C0A18172117A317002F03E0 /* libtensorflow.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtensorflow.so; path = "../../../../../../Library/Developer/Toolchains/swift-tensorflow-DEVELOPMENT-2018-07-24-a.xctoolchain/usr/lib/swift/macosx/libtensorflow.so"; sourceTree = "<group>"; };
-		5C0A18182117A317002F03E0 /* libtensorflow_framework.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtensorflow_framework.so; path = "../../../../../../Library/Developer/Toolchains/swift-tensorflow-DEVELOPMENT-2018-07-24-a.xctoolchain/usr/lib/swift/macosx/libtensorflow_framework.so"; sourceTree = "<group>"; };
 		5C0A181B2117A36E002F03E0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5C0A181E2117A3A8002F03E0 /* PongRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PongRunner.swift; sourceTree = "<group>"; };
 		5C0A181F2117A3A8002F03E0 /* FrozenLakeRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrozenLakeRunner.swift; sourceTree = "<group>"; };
-		5C0A18222117A46F002F03E0 /* DEPRECATEDModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DEPRECATEDModel.swift; sourceTree = "<group>"; };
 		5C0A18232117A46F002F03E0 /* StatsRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsRecorder.swift; sourceTree = "<group>"; };
 		5C0A18242117A46F002F03E0 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		5C0A18252117A46F002F03E0 /* Array+NumPy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+NumPy.swift"; sourceTree = "<group>"; };
 		5C0A182A2117AC09002F03E0 /* libpython2.7.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libpython2.7.tbd; path = usr/lib/libpython2.7.tbd; sourceTree = SDKROOT; };
 		5C1421412143D07C004F4CCA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		5C1421432143D519004F4CCA /* libtensorflow_framework.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtensorflow_framework.so; path = "../../../../../../Library/Developer/Toolchains/swift-tensorflow-DEVELOPMENT-2018-09-05-a.xctoolchain/usr/lib/swift/macosx/libtensorflow_framework.so"; sourceTree = "<group>"; };
-		5C1421442143D519004F4CCA /* libtensorflow.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtensorflow.so; path = "../../../../../../Library/Developer/Toolchains/swift-tensorflow-DEVELOPMENT-2018-09-05-a.xctoolchain/usr/lib/swift/macosx/libtensorflow.so"; sourceTree = "<group>"; };
 		5C7C42E52117B44C00BAB61F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		17D5E217214840830070476D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5C0A180921179636002F03E0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5C0A182B2117AC09002F03E0 /* libpython2.7.tbd in Frameworks */,
-				5C1421452143D519004F4CCA /* libtensorflow_framework.so in Frameworks */,
-				5C1421462143D519004F4CCA /* libtensorflow.so in Frameworks */,
+				171B00622146B06700AC88D9 /* libtensorflow.so in Frameworks */,
+				171B00612146B06700AC88D9 /* libtensorflow_framework.so in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17D5E21B214840830070476D /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				17D5E21C214840830070476D /* AppDelegate.swift */,
+				17D5E21E214840860070476D /* Assets.xcassets */,
+				17D5E220214840860070476D /* MainMenu.xib */,
+				17D5E223214840860070476D /* Info.plist */,
+				17D5E224214840860070476D /* Test.entitlements */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		5C0A180321179636002F03E0 = {
 			isa = PBXGroup;
 			children = (
 				5C7C42E52117B44C00BAB61F /* README.md */,
 				5C0A181B2117A36E002F03E0 /* .gitignore */,
 				5C0A180E21179636002F03E0 /* SwiftReinforce */,
+				17D5E21B214840830070476D /* Test */,
 				5C0A180D21179636002F03E0 /* Products */,
 				5C0A18162117A317002F03E0 /* Frameworks */,
 			);
@@ -80,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				5C0A180C21179636002F03E0 /* SwiftReinforce */,
+				17D5E21A214840830070476D /* SwiftReinforceApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,11 +135,9 @@
 		5C0A18162117A317002F03E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5C1421432143D519004F4CCA /* libtensorflow_framework.so */,
-				5C1421442143D519004F4CCA /* libtensorflow.so */,
+				171B005F2146B06700AC88D9 /* libtensorflow_framework.so */,
+				171B00602146B06700AC88D9 /* libtensorflow.so */,
 				5C0A182A2117AC09002F03E0 /* libpython2.7.tbd */,
-				5C0A18182117A317002F03E0 /* libtensorflow_framework.so */,
-				5C0A18172117A317002F03E0 /* libtensorflow.so */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,7 +146,6 @@
 			isa = PBXGroup;
 			children = (
 				5C0A18252117A46F002F03E0 /* Array+NumPy.swift */,
-				5C0A18222117A46F002F03E0 /* DEPRECATEDModel.swift */,
 				5C1421412143D07C004F4CCA /* Model.swift */,
 				5C0A18232117A46F002F03E0 /* StatsRecorder.swift */,
 				5C0A18242117A46F002F03E0 /* Utilities.swift */,
@@ -121,6 +156,8 @@
 		5C0A181D2117A388002F03E0 /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+				17D5E2302148417D0070476D /* MainRunner.swift */,
+				17D5E1D621482AB40070476D /* CartPoleRunner.swift */,
 				5C0A181F2117A3A8002F03E0 /* FrozenLakeRunner.swift */,
 				5C0A181E2117A3A8002F03E0 /* PongRunner.swift */,
 			);
@@ -130,6 +167,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		17D5E219214840830070476D /* SwiftReinforceApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17D5E225214840860070476D /* Build configuration list for PBXNativeTarget "SwiftReinforceApp" */;
+			buildPhases = (
+				17D5E216214840830070476D /* Sources */,
+				17D5E217214840830070476D /* Frameworks */,
+				17D5E218214840830070476D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftReinforceApp;
+			productName = Test;
+			productReference = 17D5E21A214840830070476D /* SwiftReinforceApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 		5C0A180B21179636002F03E0 /* SwiftReinforce */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C0A181321179636002F03E0 /* Build configuration list for PBXNativeTarget "SwiftReinforce" */;
@@ -153,10 +207,14 @@
 		5C0A180421179636002F03E0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Original;
 				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Sascha Schramm";
 				TargetAttributes = {
+					17D5E219214840830070476D = {
+						CreatedOnToolsVersion = 10.0;
+					};
 					5C0A180B21179636002F03E0 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -168,6 +226,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 5C0A180321179636002F03E0;
 			productRefGroup = 5C0A180D21179636002F03E0 /* Products */;
@@ -175,11 +234,40 @@
 			projectRoot = "";
 			targets = (
 				5C0A180B21179636002F03E0 /* SwiftReinforce */,
+				17D5E219214840830070476D /* SwiftReinforceApp */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		17D5E218214840830070476D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17D5E21F214840860070476D /* Assets.xcassets in Resources */,
+				17D5E222214840860070476D /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		17D5E216214840830070476D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17D5E22D214841320070476D /* Model.swift in Sources */,
+				17D5E22A2148412F0070476D /* FrozenLakeRunner.swift in Sources */,
+				17D5E22E214841320070476D /* StatsRecorder.swift in Sources */,
+				17D5E2292148412C0070476D /* CartPoleRunner.swift in Sources */,
+				17D5E232214841B80070476D /* MainRunner.swift in Sources */,
+				17D5E22C214841320070476D /* Array+NumPy.swift in Sources */,
+				17D5E22F214841320070476D /* Utilities.swift in Sources */,
+				17D5E21D214840830070476D /* AppDelegate.swift in Sources */,
+				17D5E22B2148412F0070476D /* PongRunner.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5C0A180821179636002F03E0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -188,16 +276,74 @@
 				5C0A181021179636002F03E0 /* main.swift in Sources */,
 				5C0A18202117A3A8002F03E0 /* PongRunner.swift in Sources */,
 				5C0A18272117A46F002F03E0 /* StatsRecorder.swift in Sources */,
+				17D5E2312148417D0070476D /* MainRunner.swift in Sources */,
 				5C1421422143D07C004F4CCA /* Model.swift in Sources */,
 				5C0A18212117A3A8002F03E0 /* FrozenLakeRunner.swift in Sources */,
-				5C0A18262117A46F002F03E0 /* DEPRECATEDModel.swift in Sources */,
+				17D5E1D721482AB40070476D /* CartPoleRunner.swift in Sources */,
 				5C0A18292117A46F002F03E0 /* Array+NumPy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		17D5E220214840860070476D /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17D5E221214840860070476D /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		17D5E226214840860070476D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Test/Test.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_DYNAMIC_NO_PIC = $inherited;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_NO_COMMON_BLOCKS = $inherited;
+				INFOPLIST_FILE = Test/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = BG.Test;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		17D5E227214840860070476D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Test/Test.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_DYNAMIC_NO_PIC = $inherited;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_NO_COMMON_BLOCKS = $inherited;
+				INFOPLIST_FILE = Test/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = BG.Test;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
 		5C0A181121179636002F03E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -249,6 +395,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LD_RUNPATH_SEARCH_PATHS = "/Library/Developer/Toolchains/swift-latest/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -305,6 +452,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LD_RUNPATH_SEARCH_PATHS = "/Library/Developer/Toolchains/swift-latest/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -318,9 +466,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WMDZ2CQA8K;
-				LD_RUNPATH_SEARCH_PATHS = "/Library/Developer/Toolchains/swift-latest/usr/lib/swift/macosx";
+				DEVELOPMENT_TEAM = 9Q2SJ6AGE6;
+				LD_RUNPATH_SEARCH_PATHS = $inherited;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REEXPORTED_LIBRARY_PATHS = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
 			};
@@ -330,9 +479,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WMDZ2CQA8K;
-				LD_RUNPATH_SEARCH_PATHS = "/Library/Developer/Toolchains/swift-latest/usr/lib/swift/macosx";
+				DEVELOPMENT_TEAM = 9Q2SJ6AGE6;
+				LD_RUNPATH_SEARCH_PATHS = $inherited;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REEXPORTED_LIBRARY_PATHS = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
@@ -340,6 +490,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		17D5E225214840860070476D /* Build configuration list for PBXNativeTarget "SwiftReinforceApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17D5E226214840860070476D /* Debug */,
+				17D5E227214840860070476D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5C0A180721179636002F03E0 /* Build configuration list for PBXProject "SwiftReinforce" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

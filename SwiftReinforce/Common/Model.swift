@@ -93,7 +93,7 @@ struct Model {
         let selectedLogActionProbsSum = selectedLogActionProbs.sum(squeezingAxes: 1)
         let rewardsTensor = Tensor<Float>(rewards)
         
-        let losses = rewardsTensor * selectedLogActionProbsSum
+       /* let losses = rewardsTensor * selectedLogActionProbsSum
 //        let loss = losses.mean(alongAxes: 0)
         
         let d6 = Tensor<Float>(Float(1)/Float(batchSize))
@@ -133,7 +133,7 @@ struct Model {
             applyGradientDescent(gradients)
         } else if optimizer == Optimizer.RMSProb {
             applyRMSProb(gradients)
-        }
+        }*/
     }
     
     mutating func applyGradientDescent(_ gradients: [Tensor<Float>]) {
