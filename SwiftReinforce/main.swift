@@ -12,6 +12,29 @@ import Python
 
 RandomState.global.seed(with: 0)
 
+// N.B. - this branch is using miniconda2 not virtualenv see
+// https://github.com/johndpope/SwiftReinforce readme
+let  path = "/Users/\(NSUserName())/miniconda/envs/gymai/lib/python2.7/site-packages/"
+/*
+func runMountainCar(){
+    
+    let sys = Python.import("sys")
+    sys.path.append(path)
+    let gym = Python.import("gym")
+    let env = gym.make("MountainCar-v0")
+    env.seed(0)
+    let np = Python.import("numpy")
+    np.random.seed(0)
+    
+    let runner = MountainCarRunner()
+    
+    let start = DispatchTime.now()
+    runner.run()
+    let end = DispatchTime.now()
+    let time = Double(end.uptimeNanoseconds - start.uptimeNanoseconds)/Double(1_000_000_000)
+    print(time)
+}
+*/
 func runFrozenLake() {
     let gym = Python.import("gym")
     gym.envs.registration.register(id:"FrozenLakeNotSlippery-v0",
@@ -20,6 +43,7 @@ func runFrozenLake() {
     
     let env = gym.make("FrozenLakeNotSlippery-v0")
     env.seed(0)
+
     
     let runner = FrozenLakeRunner(env: env,
                                   observationSpace: 16,
@@ -41,10 +65,8 @@ func runFrozenLake() {
 func runPong() {
    
     let sys = Python.import("sys")
-    let path = "/Users/\(NSUserName())/miniconda2/envs/gymai/lib/python2.7/site-packages/"
     sys.path.append(path)
-     let gym = Python.import("gym")
-
+    let gym = Python.import("gym")
     let env = gym.make("Pong-v4")
     // if you see - Thread 1: Fatal error: 'try!' expression unexpectedly raised an error: Python exception: Env Pong-v4 not found (valid versions include ['Pong-v3', 'Pong-v0'])
     /*
@@ -70,7 +92,9 @@ func runPong() {
 
 func main() {
 //    runFrozenLake()
-    runPong()
+//    runPong()
+//    runMountainCar()
+    SymPy.run()
 }
 
 main()
