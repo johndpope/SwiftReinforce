@@ -19,8 +19,11 @@ class SymPy{
         importSysPath()
         
         let sympy = Python.import("sympy")
+        let latex = Python.import("sympy.parsing.latex")
+        let expr = latex.parse_latex("x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}")
+        print("expr:",expr)
         let np = Python.import("numpy")
-        let mpmath = Python.import("mpmath")
+        //let mpmath = Python.import("mpmath")
         
         let t = sympy.Symbol("t")
         let y = sympy.Symbol("y")
@@ -28,10 +31,9 @@ class SymPy{
         let sigmoid = 1/(1+sympy.exp(-y))
         let cross_entropy = y * sympy.ln(t)+(1 - y) * sympy.ln(1 - t)
         let cost =  sympy.Pow((y - t),2) / 2
-        let arr = [y, t]
-        let costFunc = sympy.lambdify(arr, cost, np)
+        let costFunc = sympy.lambdify([y, t], cost)
         let costP = sympy.diff(cost, y)
-        let costPf = sympy.lambdify([y, t], costP, np)
+        let costPf = sympy.lambdify([y, t], costP)
         print("costPF:",costP)
 
     }
