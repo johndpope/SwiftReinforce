@@ -26,7 +26,7 @@ brew install cmake boost boost-python sdl2 swig wget
 https://conda.io/docs/_downloads/conda-cheatsheet.pdf     
       
 ```
-// https://conda.io/miniconda.html - use python2 based to avoid (No module named cPickle) errors
+// https://conda.io/miniconda.html 
 conda create -n gymai  python=2.7.9
 source activate gymai
 pip install --upgrade pip
