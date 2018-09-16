@@ -31,6 +31,8 @@ conda create -n gymai  python=2.7.9
 source activate gymai
 pip install --upgrade pip
 pip install "gym[atari]"
+pip install sympy
+pip install antlr4-python2-runtime
 
 ```
      
