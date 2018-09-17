@@ -14,6 +14,7 @@ class PythonClass{
     var lambdify:PythonObject!
     var latex:PythonObject!
     var sys:PythonObject!
+    var random:PythonObject!
     static var runOnce = false
     // Schema > Run > Pre-actions - source activate gymai
     func importClasses(){
@@ -23,6 +24,9 @@ class PythonClass{
         sympy = Python.import("sympy")
         latex = Python.import("sympy.parsing.latex")
         lambdify = Python.import("sympy.utilities.lambdify")
+        random = Python.import("random")
+
+        
     }
     
     func importSysPath(){

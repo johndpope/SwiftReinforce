@@ -5,9 +5,7 @@ class NeuralNet:PythonClass{
     
     func  runNet(){
         importSysPath()
-        
         testBackProp()
-        
     }
     
     func testBackProp(){
@@ -31,14 +29,27 @@ class NeuralNet:PythonClass{
         //        let costPf = sympy.lambdify([y, t], costP) // this blows up  https://github.com/tensorflow/swift/issues/72
         print("costPF:",costP)
         
-        
+        // Mnist sample dataset
         let dataset = Python.import("sklearn.datasets").load_digits()
         let classifier = Python.import("sklearn.svm").LinearSVC()
         var (xTrain, xTest, yTrain, yTest) = Python.import("sklearn.model_selection").train_test_split(dataset["data"], dataset["target"]).tuple4
         
-        print("xTest:",xTest)
-//       xTest = xTest.reshape(-1, 28*28) ///256
+        var yHot = numpy.zeros(yTrain.count)//
+        print("yHot:",yHot)
+        for y in yTrain{
+            let hot = oneHot(y)
+            print("hot:",hot)
+            yHot = np.append(yHot,hot,0)
+        }
+        print("yHot count:",yHot.count)
         
+        
+        
+        print("xTest:",xTest)
+        //       xTest = xTest.reshape(-1, 28*28) ///256 - TODO
+        
+        
+        // 100 neurons
         let  layers:[Any] = [
             FullyConnectedLayer(784, 100),
             ActivationLayer(sigmoid, y),
@@ -46,6 +57,20 @@ class NeuralNet:PythonClass{
             ActivationLayer(sigmoid, y),
         ]
         
+        for _ in 0..<2000{
+            let n = xTrain.count
+            let rnd = numpy.random.rand(0,n-1)
+            let len = Python.len(xTest)
+            let range = Python.range(len)
+            let s = numpy.array(random.sample(range, 10)) //random sample
+          
+            print("rnd:",rnd)
+            print("xTrain:",xTrain[s])
+            print("yHot:",yHot[s])
+            
+            train(layers, xTrainBatch: xTrain[s],yHotBatch:yHot[s], costPf, 5)
+            print((test(xTrain, yTrain), test(xTest, yTest)))
+        }
         
     }
     
@@ -55,53 +80,53 @@ class NeuralNet:PythonClass{
         }
         return x
     }
-
     
-    func train(_ layers:Any,_ batch:PythonObject,_ costPartial:PythonObject,_ rate:Int = 1){
-     /*  var  layers_memories = []
-        for( xin, xout) in zip(batch){
-               results = [xin]
-                for layer in layers{
-                    results.append(layer.apply(results[-1]))
-                    e = costPartial(xout, results[-1])
-                    layers_memory = []
-                }
-        }
-
-        for (layer, result) in reversed(list(zip(layers, results[:-1]))){
-            var e, memory = layer.back(e, result)
-            layers_memory.append(memory)
-            layers_memories.append(reversed(layers_memory))
-        }
-  
-        
-        for layer, layer_memories in zip(layers, zip(*layers_memories)){
-                  layer.learn(layer_memories, rate=rate)
-        }
-      */
+    
+    func train(_ layers:Any, xTrainBatch:PythonObject, yHotBatch:PythonObject,_ costPartial:PythonObject,_ rate:Int = 1){
+        /*  var  layers_memories = []
+         for( xin, xout) in zip(batch){
+         results = [xin]
+         for layer in layers{
+         results.append(layer.apply(results[-1]))
+         e = costPartial(xout, results[-1])
+         layers_memory = []
+         }
+         }
+         
+         for (layer, result) in reversed(list(zip(layers, results[:-1]))){
+         var e, memory = layer.back(e, result)
+         layers_memory.append(memory)
+         layers_memories.append(reversed(layers_memory))
+         }
+         
+         
+         for layer, layer_memories in zip(layers, zip(*layers_memories)){
+         layer.learn(layer_memories, rate=rate)
+         }
+         */
     }
-  
     
-
     
-    func oneHot(n:PythonObject)->PythonObject{
+    
+    
+    func oneHot(_ n:PythonObject)->PythonObject{
         var a = numpy.zeros(10)
         a[n] = 1
         return a
     }
-
+    
     
     func test(_ X:PythonObject,_ Y:PythonObject){
         
-//        let list = forward(layers, x) for x in X{
-//
-//        }
+        //        let list = forward(layers, x) for x in X{
+        //
+        //        }
         
-       var  predictions = numpy.array([0])
-        var yPredict = numpy.argmax(predictions, axis:1).reshape(-1, 1)
-//        return (yPredict == Y).sum() / Y.count
+        var  predictions = numpy.array([0])
+//        var yPredict = numpy.argmax(predictions, axis:1).reshape(-1, 1)
+        //        return (yPredict == Y).sum() / Y.count
     }
-
+    
     
     
     
@@ -148,7 +173,7 @@ class NeuralNet:PythonClass{
     
     
     
-
+    
     class ActivationLayer:PythonClass{
         
         var activation:PythonObject!

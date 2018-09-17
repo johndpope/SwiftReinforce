@@ -12,6 +12,7 @@
 		1733081821501E9100CB360C /* libtensorflow_framework.so in Frameworks */ = {isa = PBXBuildFile; fileRef = 1733081621501E9100CB360C /* libtensorflow_framework.so */; };
 		1733081B215020C500CB360C /* NeuralNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733081A215020C500CB360C /* NeuralNet.swift */; };
 		1733081D2150287E00CB360C /* PythonClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733081C2150287E00CB360C /* PythonClass.swift */; };
+		1733081F21502DD400CB360C /* Sklearn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733081E21502DD400CB360C /* Sklearn.swift */; };
 		5C0A181021179636002F03E0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A180F21179636002F03E0 /* main.swift */; };
 		5C0A18202117A3A8002F03E0 /* PongRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A181E2117A3A8002F03E0 /* PongRunner.swift */; };
 		5C0A18212117A3A8002F03E0 /* FrozenLakeRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A181F2117A3A8002F03E0 /* FrozenLakeRunner.swift */; };
@@ -21,7 +22,6 @@
 		5C0A182B2117AC09002F03E0 /* libpython2.7.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C0A182A2117AC09002F03E0 /* libpython2.7.tbd */; };
 		5C1421422143D07C004F4CCA /* ReinforceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1421412143D07C004F4CCA /* ReinforceModel.swift */; };
 		84311D8221494F020081B0E3 /* Q-LearningModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84311D8121494F020081B0E3 /* Q-LearningModel.swift */; };
-		84311D8A214983D30081B0E3 /* Sklearn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84311D89214983D30081B0E3 /* Sklearn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +43,7 @@
 		1733081621501E9100CB360C /* libtensorflow_framework.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtensorflow_framework.so; path = "../../../../../Library/Developer/Toolchains/swift-tensorflow-DEVELOPMENT-2018-08-15-a.xctoolchain/usr/lib/swift/macosx/libtensorflow_framework.so"; sourceTree = "<group>"; };
 		1733081A215020C500CB360C /* NeuralNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNet.swift; sourceTree = "<group>"; };
 		1733081C2150287E00CB360C /* PythonClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PythonClass.swift; sourceTree = "<group>"; };
+		1733081E21502DD400CB360C /* Sklearn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sklearn.swift; sourceTree = "<group>"; };
 		5C0A180C21179636002F03E0 /* SwiftReinforce */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftReinforce; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C0A180F21179636002F03E0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		5C0A181B2117A36E002F03E0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -55,7 +56,6 @@
 		5C1421412143D07C004F4CCA /* ReinforceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReinforceModel.swift; sourceTree = "<group>"; };
 		5C7C42E52117B44C00BAB61F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		84311D8121494F020081B0E3 /* Q-LearningModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Q-LearningModel.swift"; sourceTree = "<group>"; };
-		84311D89214983D30081B0E3 /* Sklearn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sklearn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +75,7 @@
 		1733080F21501DEC00CB360C /* Python */ = {
 			isa = PBXGroup;
 			children = (
+				1733081E21502DD400CB360C /* Sklearn.swift */,
 				1733081C2150287E00CB360C /* PythonClass.swift */,
 				1733081021501DEC00CB360C /* sympy_test.py */,
 				1733081221501DEC00CB360C /* Sympy.swift */,
@@ -140,7 +141,6 @@
 			children = (
 				5C0A181F2117A3A8002F03E0 /* FrozenLakeRunner.swift */,
 				5C0A181E2117A3A8002F03E0 /* PongRunner.swift */,
-				84311D89214983D30081B0E3 /* Sklearn.swift */,
 			);
 			path = Runner;
 			sourceTree = "<group>";
@@ -204,13 +204,13 @@
 			files = (
 				1733081421501DEC00CB360C /* Sympy.swift in Sources */,
 				1733081B215020C500CB360C /* NeuralNet.swift in Sources */,
-				84311D8A214983D30081B0E3 /* Sklearn.swift in Sources */,
 				5C0A18282117A46F002F03E0 /* Utilities.swift in Sources */,
 				1733081D2150287E00CB360C /* PythonClass.swift in Sources */,
 				5C0A181021179636002F03E0 /* main.swift in Sources */,
 				5C0A18202117A3A8002F03E0 /* PongRunner.swift in Sources */,
 				5C0A18272117A46F002F03E0 /* StatsRecorder.swift in Sources */,
 				5C1421422143D07C004F4CCA /* ReinforceModel.swift in Sources */,
+				1733081F21502DD400CB360C /* Sklearn.swift in Sources */,
 				5C0A18212117A3A8002F03E0 /* FrozenLakeRunner.swift in Sources */,
 				84311D8221494F020081B0E3 /* Q-LearningModel.swift in Sources */,
 				5C0A18292117A46F002F03E0 /* Array+NumPy.swift in Sources */,
