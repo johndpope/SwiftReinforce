@@ -1,6 +1,26 @@
 import Foundation
 import Python
 
+extension Collection where Index: Comparable {
+    subscript(back i: Int) -> Iterator.Element {
+        let backBy = i + 1
+        return self[self.index(self.endIndex, offsetBy: -backBy)]
+    }
+}
+
+/*
+ 
+ WARNING - this is a direct port of this code
+ - https://github.com/Sheyne/Neural/blob/1b0563a65480448a48b395f74a70a7d949112f42/sympy_test.py#L104
+ - intention is to demonstrate python lambda callbacks within swift.
+ - for mnist stuff + tensorflow see https://github.com/tensorflow/swift-models/tree/stable/MNIST
+ */
+protocol NeuralLayer {
+    func apply(_ x:PythonObject)->PythonObject
+    func back(_ err_in:PythonObject,_ old_in:PythonObject)->(weights:PythonObject,biasGradient:PythonObject,weightGradient:PythonObject)
+    func learn(_ i:[NeuralLayer], _ rate:Double)->Bool;
+}
+
 class NeuralNet:PythonClass{
     
     func  runNet(){
@@ -11,7 +31,6 @@ class NeuralNet:PythonClass{
     func testBackProp(){
         print("---------------------------")
         // back propagation with sympy < 125 lines of code
-        //  https://github.com/Sheyne/Neural/blob/1b0563a65480448a48b395f74a70a7d949112f42/sympy_test.py#L104
         let y = sympy.Symbol("y")
         let t = sympy.Symbol("t")
         let sigmoid = 1/(1+sympy.exp(-y))
@@ -50,7 +69,7 @@ class NeuralNet:PythonClass{
         
         
         // 100 neurons
-        let  layers:[Any] = [
+        let  layers:[NeuralLayer] = [
             FullyConnectedLayer(784, 100),
             ActivationLayer(sigmoid, y),
             FullyConnectedLayer(100, 10),
@@ -82,28 +101,31 @@ class NeuralNet:PythonClass{
     }
     
     
-    func train(_ layers:Any, xTrainBatch:PythonObject, yHotBatch:PythonObject,_ costPartial:PythonObject,_ rate:Int = 1){
-        /*  var  layers_memories = []
-         for( xin, xout) in zip(batch){
-         results = [xin]
-         for layer in layers{
-         results.append(layer.apply(results[-1]))
-         e = costPartial(xout, results[-1])
-         layers_memory = []
+    func train(_ layers:[NeuralLayer], xTrainBatch:PythonObject, yHotBatch:PythonObject,_ costPartial:PythonObject,_ rate:Int = 1){
+        var  layersMemories = [NeuralLayer]()
+        var results = Array<PythonObject>()
+         for( xin, xout) in zip(xTrainBatch,yHotBatch){
+              results = [xin]
+             for layer in layers{
+                let lResults = layer.apply(results[-1])
+                results.append(lResults)
+                var e = costPartial(xout, results[-1])
+                layersMemories =  [NeuralLayer]()
+             }
          }
+        
+        let myList = Python.list(Python.zip(layers, results[back:1]))
+        for (layer, result) in Python.reversed(myList){
+             var e, memory = layer.back(e, result)
+             layersMemories.append(memory)
+             layersMemories.append(reversed(layersMemories))
          }
          
-         for (layer, result) in reversed(list(zip(layers, results[:-1]))){
-         var e, memory = layer.back(e, result)
-         layers_memory.append(memory)
-         layers_memories.append(reversed(layers_memory))
-         }
          
-         
-         for layer, layer_memories in zip(layers, zip(*layers_memories)){
-         layer.learn(layer_memories, rate=rate)
+         for (layer, layer_memories) in zip(layers,layersMemories){
+            layer.learn(layersMemories, rate)
          }
-         */
+        
     }
     
     
@@ -128,9 +150,17 @@ class NeuralNet:PythonClass{
     }
     
     
+
     
     
-    class FullyConnectedLayer:PythonClass{
+    
+    class FullyConnectedLayer:PythonClass,NeuralLayer{
+        func learn(_ i: [NeuralLayer], _ rate: Double) -> Bool {
+            
+        }
+        
+  
+        
         
         var weights:PythonObject!
         var biases:PythonObject!
@@ -174,7 +204,15 @@ class NeuralNet:PythonClass{
     
     
     
-    class ActivationLayer:PythonClass{
+    class ActivationLayer:PythonClass,NeuralLayer{
+        func learn(_ i: [NeuralLayer], _ rate: Double) -> Bool {
+            
+        }
+        
+        func back(_ err_in: PythonObject, _ old_in: PythonObject) -> (weights: PythonObject, biasGradient: PythonObject, weightGradient: PythonObject) {
+            
+        }
+        
         
         var activation:PythonObject!
         var activation_f:PythonObject!
@@ -208,16 +246,11 @@ class NeuralNet:PythonClass{
         }
         
         
-        func learn( i:Int, rate:Double)->Bool{
+        func learn(_ i:Int,_ rate:Double)->Bool{
             return true
         }
         
-        //    def __getstate__(self):
-        //    return (self.activation, self.var)
-        //
-        //    def __setstate__(self, pair):
-        //    self.__init__(*pair)
-        
+
         
     }
     
