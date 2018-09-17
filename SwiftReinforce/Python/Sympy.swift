@@ -2,34 +2,16 @@ import Foundation
 import Python
 
 
-class SymPy{
+class SymPy:PythonClass{
     
-    typealias PO = PythonObject
-    static var math:PythonObject!
-    static var np:PythonObject!
-    static var sympy:PythonObject!
-    static var lambdify:PythonObject!
-    static var latex:PythonObject!
-    static var sys:PythonObject!
-    
-    // Schema > Run > Pre-actions - source activate gymai
-    static func importSysPath(){
-        sys = Python.import("sys")
-        let  path = "/Users/\(NSUserName())/miniconda2/envs/gymai/lib/python2.7/site-packages/"
-        sys.path.append(path)
-        np = Python.import("numpy")
-        math = Python.import("math")
-        sympy = Python.import("sympy")
-        latex = Python.import("sympy.parsing.latex")
-        lambdify = Python.import("sympy.utilities.lambdify")
-        
-    }
+
+
     //  https://github.com/fsamija/ethicon/blob/479b7c916d0fc97d05ff94a1694fbc13a7f1a9c3/venvs/edxapp/lib/python2.7/site-packages/sympy/utilities/lambdify.py#L121
     // the lambdify function breaks out of the box - https://github.com/tensorflow/swift/issues/72
     // use lambdastr to get around this - TODO - work out how to eval it.
     
     //Returns a string that can be evaluated to a lambda function.
-    static func testLambdifyStr(){
+    func testLambdifyStr(){
         let a = sympy.DeferredVector("a")
         let s = sympy.DeferredVector("x")
         let t = sympy.Symbol("t")
@@ -56,7 +38,7 @@ class SymPy{
     
 //    a = eval("lambda x: print('hello {0}'.format(x))")
 //    a("world") # prints "hello world"
-    static func helloWorld(){
+    func helloWorld(){
         return
         let x = sympy.Symbol("x")
         let fn = sympy.Function(Python.print(Python.str("hello {$0}").format(x))) //doesn't work
@@ -65,7 +47,7 @@ class SymPy{
         λ("world")
     }
     
-    static func simpleLambdify(){
+    func simpleLambdify(){
         //>>> f = lambdify((x,y,z), [z,y,x])
           //  >>> f(1,2,3)
         
@@ -112,7 +94,7 @@ class SymPy{
         
     }
     
-    static func testTupleDeclaration(){
+    func testTupleDeclaration(){
         // declare sympy vars by tuple or individually
         let tuple = sympy.symbols("a,b,c,x",real:true)
         print("a:",tuple[0])
@@ -124,7 +106,7 @@ class SymPy{
     }
     
     // Solve equation passing variable values
-    static func solveEquation(){
+    func solveEquation(){
         let exp = sympy.S("(a+b)*40-(c-a)/0.5")
         print("exp:",exp)
         let test = exp.evalf(subs:["a":6, "b":5, "c":2])
@@ -132,7 +114,7 @@ class SymPy{
     }
     
     // import latex code - parse it + symbolicate it to allow evaluation of function.
-    static func testLatex(){
+    func testLatex(){
         
         // latex 1st sample from https://github.com/kostub/iosMath
         let str = "\\frac{-b  \\sqrt{b^2-4ac}}{2a}"
@@ -144,33 +126,11 @@ class SymPy{
         print("test:",test)
     }
     
-    static func testBackProp(){
-        print("---------------------------")
-        // back propagation with sympy < 125 lines of code
-       //  https://github.com/Sheyne/Neural/blob/1b0563a65480448a48b395f74a70a7d949112f42/sympy_test.py#L104
-        let y = sympy.Symbol("y")
-        let t = sympy.Symbol("t")
-        let sigmoid = 1/(1+sympy.exp(-y))
-        let cross_entropy = y * sympy.ln(t)+(1 - y) * sympy.ln(1 - t)
-        let cost =  sympy.Pow((y - t),2) / 2
-        let args = sympy.Array([y, t])
 
-        let costFunc = lambdify.lambdastr(args, cost)
-        print("costFunc:",costFunc)
-
-        let costP = sympy.diff(cost, y)
-        print("costP:",costP)
-        
-         let costPf = lambdify.lambdastr([y, t],costP)
-//        let costPf = sympy.lambdify([y, t], costP) // this blows up  https://github.com/tensorflow/swift/issues/72
-        print("costPF:",costP)
-        
-    }
-    
     
     //see lambdify python class
     // https://github.com/fsamija/ethicon/blob/479b7c916d0fc97d05ff94a1694fbc13a7f1a9c3/venvs/edxapp-sandbox/lib/python2.7/site-packages/sympy/utilities/lambdify.py#L171
-    static func lambdaSinTest(){
+    func lambdaSinTest(){
         let abc = Python.import("sympy.abc")
 //        let x = abc.x()
         let y = sympy.abc.y()
@@ -204,15 +164,23 @@ class SymPy{
         
     }
     // https://github.com/Sheyne/Neural/blob/1b0563a65480448a48b395f74a70a7d949112f42/sympy_test.py
-    static func run(){
+    func run(){
         importSysPath()
         
         helloWorld()
 
         solveEquation()
         testLambdifyStr()
-        lambdaSinTest()
-        testBackProp()
+//        lambdaSinTest()
+
 
     }
+    
+    
+    
+    
+    
+    
+
 }
+

@@ -94,7 +94,9 @@ func main() {
 //    runFrozenLake()
 //    runPong()
 //    runMountainCar()
-    SymPy.run()
+//    SymPy.run()
+    let nn = NeuralNet()
+    nn.runNet()
 }
 
 main()
