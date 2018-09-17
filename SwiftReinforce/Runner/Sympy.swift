@@ -30,7 +30,6 @@ class SymPy{
     
     //Returns a string that can be evaluated to a lambda function.
     static func testLambdifyStr(){
-        
         let a = sympy.DeferredVector("a")
         let s = sympy.DeferredVector("x")
         let t = sympy.Symbol("t")
@@ -45,12 +44,25 @@ class SymPy{
 
         let λ = Python.eval(strTest,["builtins":"None"])
         print("λ fn:",λ)
+
+  
 //        let xArray = np.array(1)
 //        let aArray = np.array(1,1)
 //
 //        let e0 = Python.map(λ,xArray,aArray)
         
-//        print("λ(1,2):",λ(xArray,aArray))
+//        print("λ(1,2):",λ(xv,av)
+    }
+    
+//    a = eval("lambda x: print('hello {0}'.format(x))")
+//    a("world") # prints "hello world"
+    static func helloWorld(){
+        return
+        let x = sympy.Symbol("x")
+        let fn = sympy.Function(Python.print(Python.str("hello {$0}").format(x))) //doesn't work
+        let λstr = lambdify.lambdastr(x,fn)
+        let λ = Python.eval(λstr,["builtins":"None"])
+        λ("world")
     }
     
     static func simpleLambdify(){
@@ -68,6 +80,16 @@ class SymPy{
 //            }
 //
 //        }
+        
+        //        class Person:
+        //        def __init__(self, name, age):
+        //        self.name = name
+        //        self.age = age
+        //
+        //        def intro(self):
+        //        return 'Name: ' + self.name + ', Age: ' + str(self.age)
+        //
+
         
         /* TODO - hook up this function
  class my_func(Function):
@@ -184,6 +206,8 @@ class SymPy{
     // https://github.com/Sheyne/Neural/blob/1b0563a65480448a48b395f74a70a7d949112f42/sympy_test.py
     static func run(){
         importSysPath()
+        
+        helloWorld()
 
         solveEquation()
         testLambdifyStr()
