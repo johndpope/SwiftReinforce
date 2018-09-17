@@ -31,6 +31,14 @@ class NeuralNet:PythonClass{
         //        let costPf = sympy.lambdify([y, t], costP) // this blows up  https://github.com/tensorflow/swift/issues/72
         print("costPF:",costP)
         
+        
+        let dataset = Python.import("sklearn.datasets").load_digits()
+        let classifier = Python.import("sklearn.svm").LinearSVC()
+        var (xTrain, xTest, yTrain, yTest) = Python.import("sklearn.model_selection").train_test_split(dataset["data"], dataset["target"]).tuple4
+        
+        print("xTest:",xTest)
+//       xTest = xTest.reshape(-1, 28*28) ///256
+        
         let  layers:[Any] = [
             FullyConnectedLayer(784, 100),
             ActivationLayer(sigmoid, y),

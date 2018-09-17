@@ -33,6 +33,7 @@ pip install --upgrade pip
 pip install "gym[atari]"
 pip install sympy
 pip install antlr4-python2-runtime
+pip install sklearn
 
 ```
      
