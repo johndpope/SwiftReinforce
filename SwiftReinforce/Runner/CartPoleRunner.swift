@@ -66,6 +66,10 @@ class CartPoleRunner {
  I[I != 0] = 1  # everything else (paddles, ball) just set to 1
  return I.astype(np.float).ravel()
 
+     public func ==<A: Element, B: Element>(left: A, right: B) -> Bool where A.Element == B.Element, A.Element: Equatable {
+     return left.shape == right.shape && !zip(left, right).allElements.contains(where: !=)
+     }
+     
  */
     func preprocess(_ step: PythonObject) -> [Float] {
 //            print("observation n:",step)

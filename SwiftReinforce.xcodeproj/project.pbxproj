@@ -89,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1794EFC4214AB8520039F130 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			path = SwiftReinforce/Resources;
+			sourceTree = "<group>";
+		};
 		17D5E21B214840830070476D /* Test */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +112,7 @@
 		5C0A180321179636002F03E0 = {
 			isa = PBXGroup;
 			children = (
+				1794EFC4214AB8520039F130 /* Resources */,
 				5C7C42E52117B44C00BAB61F /* README.md */,
 				5C0A181B2117A36E002F03E0 /* .gitignore */,
 				5C0A180E21179636002F03E0 /* SwiftReinforce */,

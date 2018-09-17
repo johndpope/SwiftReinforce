@@ -14,6 +14,11 @@ enum Optimizer {
     case GradientDescent
 }
 
+
+
+
+
+
 func adjointSoftmax(_ x: Tensor<Float>, seed: Tensor<Float>) -> Tensor<Float> {
     let batchSize = Int(x.shape[0])
     let size = Int(x.shape[1])

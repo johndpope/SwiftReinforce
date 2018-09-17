@@ -31,6 +31,10 @@ func renderPixels(_ pixels: [UInt8], rows: Int, cols: Int) {
     sys.path.append(path)
     let image = Python.import("PIL.Image")
     
+    var I:[Double] = [0, 1, 2, 3, 4, 5,26,1,1]
+    I[I == 1.0] = [2.0]
+    
+    print("I:",I)
     var foo =  [[UInt8]]()
     for i in 0 ..< rows{
         for j in 0 ..< cols{
