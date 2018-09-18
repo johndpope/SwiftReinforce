@@ -43,6 +43,8 @@ class PythonClass{
             let  path = "/Users/\(NSUserName())/miniconda2/envs/gymai/lib/python2.7/site-packages/"
             sys.path.append(path)
             
+            // HARD CODE THIS LINK TO THE REPO LOCATION FOR .py FILES
+            //    eg.  "/Users/jpope/Documents/SwiftReinforce/Python"
             let  customClassPath = "/Users/jpope/Documents/tensorflowWorkspace/SE2CNN/se2cnn"
             sys.path.append(customClassPath)
 

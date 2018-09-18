@@ -44,6 +44,8 @@
 		1733081C2150287E00CB360C /* PythonClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PythonClass.swift; sourceTree = "<group>"; };
 		1733081E21502DD400CB360C /* Sklearn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sklearn.swift; sourceTree = "<group>"; };
 		173308202151386600CB360C /* Perceptron.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Perceptron.swift; sourceTree = "<group>"; };
+		17330823215182CB00CB360C /* rotation_matrix.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = rotation_matrix.py; sourceTree = "<group>"; };
+		17330824215182CB00CB360C /* layers.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = layers.py; sourceTree = "<group>"; };
 		5C0A180C21179636002F03E0 /* SwiftReinforce */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftReinforce; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C0A180F21179636002F03E0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		5C0A181B2117A36E002F03E0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -75,6 +77,8 @@
 		1733080F21501DEC00CB360C /* Python */ = {
 			isa = PBXGroup;
 			children = (
+				17330824215182CB00CB360C /* layers.py */,
+				17330823215182CB00CB360C /* rotation_matrix.py */,
 				173308202151386600CB360C /* Perceptron.swift */,
 				1733081E21502DD400CB360C /* Sklearn.swift */,
 				1733081C2150287E00CB360C /* PythonClass.swift */,
