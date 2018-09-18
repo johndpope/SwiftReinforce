@@ -15,6 +15,12 @@ class PythonClass{
     var latex:PythonObject!
     var sys:PythonObject!
     var random:PythonObject!
+    
+    //custom layers
+    var rotationMatrix:PythonObject!
+    var layers:PythonObject!
+    
+    
     static var runOnce = false
     // Schema > Run > Pre-actions - source activate gymai
     func importClasses(){
@@ -36,6 +42,20 @@ class PythonClass{
             sys = Python.import("sys")
             let  path = "/Users/\(NSUserName())/miniconda2/envs/gymai/lib/python2.7/site-packages/"
             sys.path.append(path)
+            
+            let  customClassPath = "/Users/jpope/Documents/tensorflowWorkspace/SE2CNN/se2cnn"
+            sys.path.append(customClassPath)
+
+            numpy = Python.import("numpy")
+            rotationMatrix  = Python.import("rotation_matrix")
+           
+            
+           let  myoutput = rotationMatrix.CoordRotationInv( [1.5,4.3], [5,5], Double.pi/4 )
+            print("\n\n\n")
+            print("myoutput:",myoutput)
+            
+//            Python.help(rotationMatrix.CoordRotationInv)
+            
         }
         importClasses()
 
@@ -43,3 +63,5 @@ class PythonClass{
     }
     
 }
+
+

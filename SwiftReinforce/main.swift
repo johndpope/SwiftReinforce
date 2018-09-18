@@ -95,8 +95,17 @@ func main() {
 //    runPong()
 //    runMountainCar()
 //    SymPy.run()
-    let nn = NeuralNet()
-    nn.runNet()
+//    let nn = NeuralNet()
+//    nn.runNet()
+    let test = PythonClass()
+    test.importSysPath()
+    
 }
 
 main()
+
+var I:[Double] = [0, 1, 2, 3, 4, 5,26,1,1]
+I[I == 1.0] <= 2.0
+print("I:",I)
+
+

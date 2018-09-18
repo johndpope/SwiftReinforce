@@ -114,18 +114,7 @@ class NeuralNet:PythonClass{
              }
          }
         
-        let myList = Python.list(Python.zip(layers, results[back:1]))
-        for (layer, result) in Python.reversed(myList){
-             var e, memory = layer.back(e, result)
-             layersMemories.append(memory)
-             layersMemories.append(reversed(layersMemories))
-         }
-         
-         
-         for (layer, layer_memories) in zip(layers,layersMemories){
-            layer.learn(layersMemories, rate)
-         }
-        
+
     }
     
     
@@ -156,7 +145,7 @@ class NeuralNet:PythonClass{
     
     class FullyConnectedLayer:PythonClass,NeuralLayer{
         func learn(_ i: [NeuralLayer], _ rate: Double) -> Bool {
-            
+            return true
         }
         
   
@@ -206,11 +195,16 @@ class NeuralNet:PythonClass{
     
     class ActivationLayer:PythonClass,NeuralLayer{
         func learn(_ i: [NeuralLayer], _ rate: Double) -> Bool {
-            
+            return true
         }
         
+        // TODO
         func back(_ err_in: PythonObject, _ old_in: PythonObject) -> (weights: PythonObject, biasGradient: PythonObject, weightGradient: PythonObject) {
+            let weights = PythonObject()
+            let biasGradient = PythonObject()
+            let weightGradient = PythonObject()
             
+            return (weights,biasGradient,weightGradient)
         }
         
         

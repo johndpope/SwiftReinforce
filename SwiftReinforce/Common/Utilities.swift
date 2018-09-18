@@ -10,33 +10,7 @@ import Foundation
 import TensorFlow
 import Python
 
-/*
-@inline(never)
-func adjointSoftmax2(tensor: Tensor<Float>,
-                     seed: Tensor<Float>,
-                     batchSize: Int,
-                     observationSpace: Int32) -> Tensor<Float> {
-    
-    var jacobian = [Float]()
-    
-    for i in 0 ..< batchSize {
-        let input = tensor.slice(lowerBounds: [Int32(i), 0],
-                                 upperBounds: [Int32(i)+1, Int32(batchSize)])[0]
-        
-        let sExpanded = input.expandingShape(at: 1)
-        let x1 = Raw.diag(diagonal: input)
-        let x2 = matmul(sExpanded, sExpanded.transposed())
-        let result = x1-x2
-        jacobian += result.scalars
-    }
-    
-    let jacobianTensor =
-        Tensor<Float>(shape: [Int32(batchSize), Int32(observationSpace), Int32(observationSpace)],
-                      scalars: jacobian)
-    
-    //return (jacobianTensor * seed.expandingShape(at: 1)).sum(squeezingAxes: 2)
-    return jacobianTensor * seed.expandingShape(at: 1)
-}*/
+
 
 func discount(rewards: [Float], dones: [Bool], discountRate: Float) -> [Float] {
     var discounted: [Float] = []
