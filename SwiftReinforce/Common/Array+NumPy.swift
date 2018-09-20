@@ -131,3 +131,53 @@ public func <= <AnyObject: Equatable>(lhs: inout Array<AnyObject>, rhs:AnyObject
     }
     
 }
+
+public protocol Arithmetic {
+    static func + (lhs: Self, rhs: Self) -> Self
+    static func - (lhs: Self, rhs: Self) -> Self
+    static func * (lhs: Self, rhs: Self) -> Self
+    static func / (lhs: Self, rhs: Self) -> Self
+    
+    static func += (lhs: inout Self, rhs: Self)
+    static func -= (lhs: inout Self, rhs: Self)
+    static func *= (lhs: inout Self, rhs: Self)
+    static func /= (lhs: inout Self, rhs: Self)
+    
+}
+
+// let envDx = ( envHigh - envLow) / div
+//public func - <Arithmetic>(lhs: Array<Arithmetic>, rhs: Arithmetic) -> Arithmetic {
+//    return map(rhs) { lhs - $0 }
+//}
+
+
+//
+//func apply<T, R>(_ arg: [T], _ handler: (T) -> R) -> [R] {
+//    var inPointer = UnsafePointer(arg)
+//    let outPointer = UnsafeMutablePointer<R>.allocate(capacity: arg.count)
+//    defer { outPointer.deallocate(capacity: arg.count) }
+//
+//    var p = outPointer
+//    for _ in 0..<arg.count {
+//        p.pointee = handler(inPointer.pointee)
+//        p += 1
+//        inPointer += 1
+//    }
+//
+//    return [R](UnsafeBufferPointer(start: outPointer, count: arg.count))
+//}
+
+
+
+
+//public func / <BinaryFloatingPoint>(lhs: inout Array<BinaryFloatingPoint>, rhs:BinaryFloatingPoint)->Array<BinaryFloatingPoint>{
+//    
+//    var result = lhs
+//    for (index,element) in result.enumerated() {
+//
+//        result[index] = element / rhs
+//    }
+//    return result
+//    
+//}
+

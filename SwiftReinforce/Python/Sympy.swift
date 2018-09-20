@@ -32,16 +32,27 @@ class SymPy:PythonClass{
 //        let aArray = np.array(1,1)
 //
 //        let e0 = Python.map(λ,xArray,aArray)
-        
 //        print("λ(1,2):",λ(xv,av)
+//      a = eval("lambda x: print('hello {0}'.format(x))")
+//      a("world") # prints "hello world"
+        
     }
     
-//    a = eval("lambda x: print('hello {0}'.format(x))")
-//    a("world") # prints "hello world"
+
+    
     func helloWorld(){
+
         return
+        let test   = Python.import("test_lambda") // load 
+   
+        // call nested function
+        test.my_func.my_cool_function(360)
+        
+        
+        
+        
+        let fn = sympy.Function() //doesn't work
         let x = sympy.Symbol("x")
-        let fn = sympy.Function(Python.print(Python.str("hello {$0}").format(x))) //doesn't work
         let λstr = lambdify.lambdastr(x,fn)
         let λ = Python.eval(λstr,["builtins":"None"])
         λ("world")
@@ -50,48 +61,12 @@ class SymPy:PythonClass{
     func simpleLambdify(){
         //>>> f = lambdify((x,y,z), [z,y,x])
           //  >>> f(1,2,3)
-        
+//        Δ
           let x = sympy.Symbol("x")
           let y = sympy.Symbol("y")
           let z = sympy.Symbol("z")
           let fn =  sympy.Function("f")
-        
-//        class my_func:PythonObject{
-//            func eval(){
-//                print("ok")
-//            }
-//
-//        }
-        
-        //        class Person:
-        //        def __init__(self, name, age):
-        //        self.name = name
-        //        self.age = age
-        //
-        //        def intro(self):
-        //        return 'Name: ' + self.name + ', Age: ' + str(self.age)
-        //
-
-        
-        /* TODO - hook up this function
- class my_func(Function):
- ...
- ...     @classmethod
- ...     def eval(cls, x):
- ...         if x.is_Number:
- ...             if x is S.Zero:
- ...                 return S.One
- ...             elif x is S.Infinity:
- ...                 return S.Zero
- ...
- ...     def _eval_is_real(self):
- ...         return self.args[0].is_real
- */
-//         let strTest = lambdify.lambdastr([x,y,z],my_func)
-        // eval it
-        // exec
-        
-        
+            
     }
     
     func testTupleDeclaration(){
@@ -113,17 +88,26 @@ class SymPy:PythonClass{
         print("test:",test)
     }
     
-    // import latex code - parse it + symbolicate it to allow evaluation of function.
+    // Import latex code - parse it + symbolicate it to allow evaluation of function.
     func testLatex(){
         
         // latex 1st sample from https://github.com/kostub/iosMath
         let str = "\\frac{-b  \\sqrt{b^2-4ac}}{2a}"
-        let expr = latex.parse_latex(str)
+        let expr = latex.parse_latex(str) //pip install antlr4-python2-runtime
         sympy.init_printing(pretty_print:true,use_latex:true)
         
         print("expr:",expr)
         let test = expr.evalf(subs:["a":1, "b":1, "c":1]) //,"pm":1 -> plus / minus https://github.com/sympy/sympy/issues/5305
         print("test:",test)
+        
+//        from  import latex_to_png
+        let imgData = latexTools.latex_to_png(str) //, backend:"dvipng", wrap:true)  //dvipng  needs 3gb install !!!!- http://tug.org/mactex/
+        // TODO - how to convert python png from this pythondata
+//        var bitmap: NSBitmapImageRep! = NSBitmapImageRep(data: imgData)
+//        var pngCoverImage = bitmap!.representationUsingType(NSBitmapImage.NSPNGFileType, properties: nil)
+        print("img:",imgData)
+        
+        
     }
     
 
@@ -167,11 +151,16 @@ class SymPy:PythonClass{
     func run(){
         importSysPath()
         
+        // import
+        let  customClassPath = "/Users/jpope/Documents/tensorflowWorkspace/SwiftReinforce/SwiftReinforce/Python"
+        sys.path.append(customClassPath)
+        
+        testLatex()
+        testTupleDeclaration()
         helloWorld()
-
         solveEquation()
         testLambdifyStr()
-//        lambdaSinTest()
+//       lambdaSinTest()
 
 
     }

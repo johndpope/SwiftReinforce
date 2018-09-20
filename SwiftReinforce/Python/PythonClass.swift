@@ -4,6 +4,7 @@ import Python
 
 
 
+
 class PythonClass{
     typealias PO = PythonObject
     var math:PythonObject!
@@ -13,53 +14,47 @@ class PythonClass{
     var sympy:PythonObject!
     var lambdify:PythonObject!
     var latex:PythonObject!
+    var latexTools:PythonObject!
+    
     var sys:PythonObject!
     var random:PythonObject!
-    
+    var keras:PythonObject!
     //custom layers
     var rotationMatrix:PythonObject!
     var layers:PythonObject!
     
+ 
+    
     
     static var runOnce = false
     // Schema > Run > Pre-actions - source activate gymai
-    func importClasses(){
-        np = Python.import("numpy")
-        numpy = Python.import("numpy")
-        math = Python.import("math")
-        sympy = Python.import("sympy")
-        latex = Python.import("sympy.parsing.latex")
-        lambdify = Python.import("sympy.utilities.lambdify")
-        random = Python.import("random")
 
-        
-    }
     
+    // Using miniconda2 / or 3 - change here!!!!!
     func importSysPath(){
         
+
         if !PythonClass.runOnce{
+            // IMPORTANT
+            //  - locate site-packages before importing frameworks
+            // use 2 or 3 here
             PythonClass.runOnce = true
             sys = Python.import("sys")
-            let  path = "/Users/\(NSUserName())/miniconda2/envs/gymai/lib/python2.7/site-packages/"
+            let  path = "/Users/\(NSUserName())/miniconda3/envs/gymai/lib/python2.7/site-packages/"
             sys.path.append(path)
             
-            // HARD CODE THIS LINK TO THE REPO LOCATION FOR .py FILES
-            //    eg.  "/Users/jpope/Documents/SwiftReinforce/Python"
-            let  customClassPath = "/Users/jpope/Documents/tensorflowWorkspace/SE2CNN/se2cnn"
-            sys.path.append(customClassPath)
-
+            
+            np = Python.import("numpy")
             numpy = Python.import("numpy")
-            rotationMatrix  = Python.import("rotation_matrix")
-           
+            math = Python.import("math")
+            sympy = Python.import("sympy")
+            latex = Python.import("sympy.parsing.latex")
+            latexTools = Python.import("IPython.lib.latextools")
+            lambdify = Python.import("sympy.utilities.lambdify")
+            random = Python.import("random")
             
-           let  myoutput = rotationMatrix.CoordRotationInv( [1.5,4.3], [5,5], Double.pi/4 )
-            print("\n\n\n")
-            print("myoutput:",myoutput)
-            
-//            Python.help(rotationMatrix.CoordRotationInv)
-            
+
         }
-        importClasses()
 
         
     }

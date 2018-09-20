@@ -3,8 +3,12 @@
 ## Introduction
 Implementation of the Reinforce algorithm using Swift for Tensorflow.
 
+
+
 ## Install Swift for Tensorflow
 This project is based on Swift for Tensorflow. To install Swift for Tensorflow visit [https://github.com/tensorflow/swift/](https://github.com/tensorflow/swift/blob/master/Installation.md).
+/Library/Developer/Toolchains/swift-latest/usr/lib/swift/macosx
+
 
 The Tensorflow library for Swift is published in the [stdlib/public/TensorFlow](https://github.com/apple/swift/tree/tensorflow/stdlib/public/TensorFlow) directory.
 
@@ -31,9 +35,12 @@ conda create -n gymai  python=2.7.9
 source activate gymai
 pip install --upgrade pip
 pip install "gym[atari]"
-pip install sympy
-pip install antlr4-python2-runtime
 pip install sklearn
+
+
+pip install sympy
+pip install antlr4-python2-runtime // for loading latex 
+pip install ipython // for latext latex_to_png
 
 ```
      
@@ -61,7 +68,7 @@ source activate gymai
 
 **Troubleshooting**    
 if you see     
-Fatal error: 'try!' expression unexpectedly raised an error: Python exception: dlopen(/Users/johndpope/miniconda2/lib/python2.7/lib-dynload/_io.so, 2): Symbol not found:      
+Fatal error: 'try!' expression unexpectedly raised an error: Python exception: dlopen(/Users/johndpope/miniconda3/lib/python2.7/lib-dynload/_io.so, 2): Symbol not found:      
 __PyCodecInfo_GetIncrementalDecoder    
      
 try source activate gymai

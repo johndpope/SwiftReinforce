@@ -10,32 +10,16 @@ import Foundation
 import TensorFlow
 import Python
 
-RandomState.global.seed(with: 0)
+//RandomState.global.seed(with: 0)
 
-// N.B. - this branch is using miniconda2 not virtualenv see
+// WARNING - if you get a crash - check which python - it maybe under miniconda3 or miniconda3!
+// N.B. - this branch is using miniconda3 not virtualenv see
 // https://github.com/johndpope/SwiftReinforce readme
-let  path = "/Users/\(NSUserName())/miniconda/envs/gymai/lib/python2.7/site-packages/"
-/*
-func runMountainCar(){
-    
+let  path = "/Users/\(NSUserName())/miniconda3/envs/gymai/lib/python2.7/site-packages/"
+
+func runFrozenLake() {
     let sys = Python.import("sys")
     sys.path.append(path)
-    let gym = Python.import("gym")
-    let env = gym.make("MountainCar-v0")
-    env.seed(0)
-    let np = Python.import("numpy")
-    np.random.seed(0)
-    
-    let runner = MountainCarRunner()
-    
-    let start = DispatchTime.now()
-    runner.run()
-    let end = DispatchTime.now()
-    let time = Double(end.uptimeNanoseconds - start.uptimeNanoseconds)/Double(1_000_000_000)
-    print(time)
-}
-*/
-func runFrozenLake() {
     let gym = Python.import("gym")
     gym.envs.registration.register(id:"FrozenLakeNotSlippery-v0",
                                    entry_point:"gym.envs.toy_text:FrozenLakeEnv",
@@ -68,13 +52,7 @@ func runPong() {
     sys.path.append(path)
     let gym = Python.import("gym")
     let env = gym.make("Pong-v4")
-    // if you see - Thread 1: Fatal error: 'try!' expression unexpectedly raised an error: Python exception: Env Pong-v4 not found (valid versions include ['Pong-v3', 'Pong-v0'])
-    /*
-     conda create -n gymai  python=2.7.9
-     source activate gymai
-     pip install --upgrade pip
-     pip install "gym[atari]"
-     */
+    
     // see here -> https://github.com/johndpope/SwiftReinforce
     
     env.seed(0)
@@ -90,22 +68,20 @@ func runPong() {
     runner.run()
 }
 
+
+
 func main() {
 //    runFrozenLake()
 //    runPong()
 //    runMountainCar()
-//    SymPy.run()
+    let sp = SymPy()
+    sp.run()
 //    let nn = NeuralNet()
 //    nn.runNet()
-    let test = PythonClass()
-    test.importSysPath()
+//    let test = PythonClass()
+//    test.importSysPath()
     
 }
 
+
 main()
-
-var I:[Double] = [0, 1, 2, 3, 4, 5,26,1,1]
-I[I == 1.0] <= 2.0
-print("I:",I)
-
-

@@ -95,8 +95,8 @@ struct Model {
         
         let losses = rewardsTensor * selectedLogActionProbsSum
 //        let loss = losses.mean(alongAxes: 0)
-        
-        /*let d6 = Tensor<Float>(Float(1)/Float(batchSize))
+       /*
+        let d6 = Tensor<Float>(Float(1)/Float(batchSize))
         
         let (_, d5) = #adjoint(Tensor)(
             rewardsTensor.expandingShape(at: 1), selectedLogActionProbsSum.expandingShape(at: 1), originalValue: losses, seed: d6

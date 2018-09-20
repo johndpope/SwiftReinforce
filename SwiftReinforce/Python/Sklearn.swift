@@ -8,7 +8,7 @@ class PythonImport{
     //Fatal error: 'try!' expression unexpectedly raised an error: Python exception: No module named theano:
     static func importSys(){
         let sys = Python.import("sys")
-        let  path = "/Users/\(NSUserName())/miniconda2/envs/gymai/lib/python2.7/site-packages/"
+        let  path = "/Users/\(NSUserName())/miniconda3/envs/gymai/lib/python2.7/site-packages/"
         sys.path.append(path)
         
     }
@@ -55,7 +55,7 @@ class Theano:PythonImport{
         let np = Python.import("numpy")
         //let nn = Python.import("pytorch").nn()
         let pickle = Python.import("pickle")
-        let theano = Python.import("theano") // use miniconda2 + conda install theano
+        let theano = Python.import("theano") // use miniconda3 + conda install theano
         let T = Python.import("theano.tensor") //import theano.tensor as T
         
         

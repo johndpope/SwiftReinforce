@@ -11,15 +11,7 @@ import Python
 import TensorFlow
 
 
-func - <Element: Hashable>(lhs: [Element], rhs: [Element]) -> [Element]
-{
-    return Array(Set<Element>(lhs).subtracting(Set<Element>(rhs)))
-}
 
-//func divideElements(matrix: Matrix) -> Matrix {
-//    return self.combine(matrix, operation: /)
-//}
-//
 
 class MountainCarRunner {
     var env: PythonObject = []
@@ -27,11 +19,11 @@ class MountainCarRunner {
     var observationSpace: Int32 = 6400 // 80*80
     
     // Maps an observation to state
-    func  observationToState(_ env:PythonObject,_ observations: [[Float]] )->([Int8],[Int8]){
+    func  observationToState(_ env:PythonObject,_ observations: [[Double]] )->([Int8],[Int8]){
         
-        let envLow: [Float] = Array<Float>(numpyArray: env.observation_space.low)!
-        let envHigh: [Float] = Array<Float>(numpyArray: env.observation_space.high)!
-        let div: [Float] = Array(repeating:  Float(envLow.count), count: 6400)
+        let envLow: [Double] = Array<Double>(numpyArray: env.observation_space.low)!
+        let envHigh: [Double] = Array<Double>(numpyArray: env.observation_space.high)!
+        let div: [Double] = Array(repeating:  Double(envLow.count), count: 6400)
         let envDx = ( envHigh - envLow) / div
         let a = Int((observations[0] - envLow[0])/envDx[0])
         let b = Int((observations[1] - envLow[1])/envDx[1])
