@@ -40,17 +40,31 @@ class SymPy:PythonClass{
     
 
     
-    func helloWorld(){
 
+    
+    func testImplementedFunction(){
+
+        let testLambda   = Python.import("test_lambda") // load
+        print(testLambda.my_func.test(4))
+        /*
+        let x = sympy.Symbol("x")
+        let f = lambdify.implemented_function("f", lambdify.lambdastr(x,x+1))
+        print("f:",f)
+        let λfn = lambdify.lambdastr(x, f(x))
+        let λeval = Python.eval(λfn,["builtins":"None"])
+        print("λeval(4):",λeval)*/
+ 
+//        λeval(4) // losing scope
+
+    }
+    
+    func helloWorld(){
         return
-        let test   = Python.import("test_lambda") // load 
+        
+        let test   = Python.import("test_lambda") // load
    
         // call nested function
         test.my_func.my_cool_function(360)
-        
-        
-        
-        
         let fn = sympy.Function() //doesn't work
         let x = sympy.Symbol("x")
         let λstr = lambdify.lambdastr(x,fn)
@@ -134,10 +148,7 @@ class SymPy:PythonClass{
         func my_cool_function(){
 
         }
-        let lambdaStr = lambdify.lambdastr(x,x+1)
-        let function = sympy.Function("f")
-        let fn = Python.import("sympy.utilities.lambdify").implemented_function(function,lambdaStr)
-        print("fn:",fn)
+    
 
 
 //        >>> from sympy.abc import x, y, z
@@ -155,7 +166,10 @@ class SymPy:PythonClass{
         let  customClassPath = "/Users/jpope/Documents/tensorflowWorkspace/SwiftReinforce/SwiftReinforce/Python"
         sys.path.append(customClassPath)
         
+        testImplementedFunction()
+        
         testLatex()
+        
         testTupleDeclaration()
         helloWorld()
         solveEquation()
