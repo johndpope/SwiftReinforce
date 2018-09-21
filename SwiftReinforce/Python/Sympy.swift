@@ -4,7 +4,31 @@ import Python
 
 class SymPy:PythonClass{
     
-
+    // https://github.com/Sheyne/Neural/blob/1b0563a65480448a48b395f74a70a7d949112f42/sympy_test.py
+    func run(){
+        importSysPath()
+        
+        //TODO - test existence of this class - if not alert user to add hard coded path.
+        // nb the executal is going to be executed in some temp folder it won't have relative access to this project folder
+        let  customClassPath = "/Users/admin/Documents/mlWorkspace/SwiftReinforce/SwiftReinforce/Python"
+        print("WARNING - adding hard coded path to allow access to python class:")
+        print("path:",customClassPath)
+        print("\n\n\n")
+        sys.path.append(customClassPath)
+        
+        testImplementedFunction()
+        
+        testLatex()
+        
+        testTupleDeclaration()
+        helloWorld()
+        solveEquation()
+        testLambdifyStr()
+        //       lambdaSinTest()
+        
+        
+    }
+    
 
     //  https://github.com/fsamija/ethicon/blob/479b7c916d0fc97d05ff94a1694fbc13a7f1a9c3/venvs/edxapp/lib/python2.7/site-packages/sympy/utilities/lambdify.py#L121
     // the lambdify function breaks out of the box - https://github.com/tensorflow/swift/issues/72
@@ -158,27 +182,7 @@ class SymPy:PythonClass{
 //        let f = sympy.lambdify(x,  sympy.Pow(x,2) , ["math", "mpmath", "sympy"])
         
     }
-    // https://github.com/Sheyne/Neural/blob/1b0563a65480448a48b395f74a70a7d949112f42/sympy_test.py
-    func run(){
-        importSysPath()
-        
-        // import
-        let  customClassPath = "/Users/jpope/Documents/tensorflowWorkspace/SwiftReinforce/SwiftReinforce/Python"
-        sys.path.append(customClassPath)
-        
-        testImplementedFunction()
-        
-        testLatex()
-        
-        testTupleDeclaration()
-        helloWorld()
-        solveEquation()
-        testLambdifyStr()
-//       lambdaSinTest()
-
-
-    }
-    
+   
     
     
     
