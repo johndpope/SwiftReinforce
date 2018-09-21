@@ -26,25 +26,19 @@ class PythonClass{
     
     // test_lambda.py
     var testLambda:PythonObject!
-    
-    
     static var runOnce = false
-    // Schema > Run > Pre-actions - source activate gymai
 
-    
-    // Using miniconda2 / or 3 - change here!!!!!
     func importSysPath(){
         
 
         if !PythonClass.runOnce{
-            // IMPORTANT
-            //  - locate site-packages before importing frameworks
-            // use 2 or 3 here
+
             PythonClass.runOnce = true
           
             sys = Python.import("sys")
             
             importConda()
+            importThisProjectFolder()
             
             np = Python.import("numpy")
             numpy = Python.import("numpy")
