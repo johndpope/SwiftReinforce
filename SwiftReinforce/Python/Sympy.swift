@@ -15,7 +15,7 @@ class SymPy:PythonClass{
         //TODO - test existence of this class - if not alert user to add hard coded path.
         // nb the executal is going to be executed in some temp folder it won't have relative access to this project folder
         
-        print("INFO - python environment:",environmentName)
+     
         let  customClassPath = "/Users/jpope/Documents/tensorflowWorkspace/SwiftReinforce/SwiftReinforce/Python"
         print("INFO - adding hard coded path to allow access to python class")
         print("(you're  going to want to change this to pwd of Python folder):")

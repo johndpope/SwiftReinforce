@@ -19,10 +19,6 @@ RESTART TERMINAL!!
 conda create -n gymai  python=2.7.9
 source activate gymai
 pip install --upgrade pip
-pip install Cython
-conda install -c soumith pytorch
-
-
 pip install "gym[atari]"
 
 
@@ -30,5 +26,10 @@ pip install sympy
 pip install antlr4-python2-runtime
 pip install sklearn
 
-
 */
+
+
+WIP - work in progress
+pip install Cython
+conda install -c soumith pytorch // goal is to get let torch = Python.load("torch") working
+
