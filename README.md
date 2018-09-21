@@ -37,6 +37,9 @@ pip install --upgrade pip
 pip install "gym[atari]"
 pip install sklearn
 
+# for pytorch
+pip install Cython 
+conda install -c soumith pytorch
 
 pip install sympy
 pip install antlr4-python2-runtime // for loading latex 
