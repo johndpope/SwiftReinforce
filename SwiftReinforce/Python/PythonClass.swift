@@ -23,7 +23,9 @@ class PythonClass{
     var rotationMatrix:PythonObject!
     var layers:PythonObject!
     
- 
+    
+    // test_lambda.py
+    var testLambda:PythonObject!
     
     
     static var runOnce = false

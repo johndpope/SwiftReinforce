@@ -16,12 +16,15 @@ class SymPy:PythonClass{
         // nb the executal is going to be executed in some temp folder it won't have relative access to this project folder
         
         print("INFO - python environment:",environmentName)
-        let  customClassPath = "/Users/jpope/Documents/tensorflowWorkspace/SwiftReinforce"
-        print("INFO - adding hard coded path to allow access to python class(you're  going to want to change this to pwd):")
+        let  customClassPath = "/Users/jpope/Documents/tensorflowWorkspace/SwiftReinforce/SwiftReinforce/Python"
+        print("INFO - adding hard coded path to allow access to python class")
+        print("(you're  going to want to change this to pwd of Python folder):")
         print("path:",customClassPath)
         print("\n\n\n")
         sys.path.append(customClassPath)
         
+        
+        testLambda = Python.import("test_lambda")
         testImplementedFunction()
         
         testLatex()
@@ -74,8 +77,7 @@ class SymPy:PythonClass{
     
     func testImplementedFunction(){
 
-        let testLambda   = Python.import("test_lambda") // load
-        print(testLambda.my_func.test(4))
+//        print(testLambda.my_func.test(4))
         /*
         let x = sympy.Symbol("x")
         let f = lambdify.implemented_function("f", lambdify.lambdastr(x,x+1))
