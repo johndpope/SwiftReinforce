@@ -48,7 +48,7 @@ class PythonClass{
             latexTools = Python.import("IPython.lib.latextools")
             lambdify = Python.import("sympy.utilities.lambdify")
             random = Python.import("random")
-            
+            keras = Python.import("keras") // blows up
 
         }
 

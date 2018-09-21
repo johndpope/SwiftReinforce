@@ -82,17 +82,17 @@
 		1733080F21501DEC00CB360C /* Python */ = {
 			isa = PBXGroup;
 			children = (
-				17E5B7CE21542CB200C352F2 /* test_lambda.py */,
 				173B8E502153EBB7003A7672 /* Readme.md */,
 				173308382152DDA900CB360C /* airalcorn2.py */,
-				17330824215182CB00CB360C /* layers.py */,
-				17330823215182CB00CB360C /* rotation_matrix.py */,
-				173308202151386600CB360C /* Perceptron.swift */,
-				1733081E21502DD400CB360C /* Sklearn.swift */,
-				1733081C2150287E00CB360C /* PythonClass.swift */,
 				17D73030215561AC0090CE1A /* Environment.swift */,
+				17330824215182CB00CB360C /* layers.py */,
+				173308202151386600CB360C /* Perceptron.swift */,
+				1733081C2150287E00CB360C /* PythonClass.swift */,
+				17330823215182CB00CB360C /* rotation_matrix.py */,
+				1733081E21502DD400CB360C /* Sklearn.swift */,
 				1733081021501DEC00CB360C /* sympy_test.py */,
 				1733081221501DEC00CB360C /* Sympy.swift */,
+				17E5B7CE21542CB200C352F2 /* test_lambda.py */,
 			);
 			path = Python;
 			sourceTree = "<group>";
