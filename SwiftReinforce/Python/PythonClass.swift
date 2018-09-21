@@ -19,38 +19,43 @@ class PythonClass{
     var sys:PythonObject!
     var random:PythonObject!
     var keras:PythonObject!
+    var cPickle:PythonObject!
+    var torch:PythonObject!
+    
+    
     //custom layers
     var rotationMatrix:PythonObject!
     var layers:PythonObject!
-    
+
     
     // test_lambda.py
     var testLambda:PythonObject!
-    static var runOnce = false
+
+
 
     func importSysPath(){
-        
+        sys = Python.import("sys")
+        print("INFO: macOS sysPath:", sys.path)        
+        importPackages()
+    }
+    
+    
+    func importPackages(){
 
-        if !PythonClass.runOnce{
-
-            PythonClass.runOnce = true
-          
-            sys = Python.import("sys")
-            
             importConda()
             importThisProjectFolder()
-            
-            np = Python.import("numpy")
-            numpy = Python.import("numpy")
+            importNumpy()
+
             math = Python.import("math")
             sympy = Python.import("sympy")
             latex = Python.import("sympy.parsing.latex")
             latexTools = Python.import("IPython.lib.latextools")
             lambdify = Python.import("sympy.utilities.lambdify")
             random = Python.import("random")
-            keras = Python.import("keras") // blows up
+            cPickle = Python.import("cPickle")
+            
+            importPytorch()
 
-        }
 
         
     }
