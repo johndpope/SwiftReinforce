@@ -41,15 +41,10 @@ class PythonClass{
             //  - locate site-packages before importing frameworks
             // use 2 or 3 here
             PythonClass.runOnce = true
+          
             sys = Python.import("sys")
-            print("INFO - python environment:",environmentName)
-            let  path = "/Users/\(NSUserName())/miniconda2/envs/\(environmentName)/lib/python2.7/site-packages/"
-            sys.path.append(path)
-            let  path3 = "/Users/\(NSUserName())/miniconda3/envs/\(environmentName)/lib/python2.7/site-packages/"
-            sys.path.append(path3)
             
-            print("INFO: adding to sys path \n",path)
-            print("INFO: adding to sys path \n ",path3)
+            importConda()
             
             np = Python.import("numpy")
             numpy = Python.import("numpy")

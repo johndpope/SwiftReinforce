@@ -1,10 +1,7 @@
 import Foundation
 import Python
 
-// if you're using a different environment name
-// change this in schema > run > pre-actions
-// source activate gymai
-let environmentName = "gymai"
+
 
 class SymPy:PythonClass{
     
