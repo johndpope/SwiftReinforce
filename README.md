@@ -41,6 +41,7 @@ pip install sklearn
 pip install Cython 
 conda install -c soumith pytorch
 
+#for sympy
 pip install sympy
 pip install antlr4-python2-runtime // for loading latex 
 pip install ipython // for latext latex_to_png
