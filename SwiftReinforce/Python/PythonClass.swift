@@ -40,9 +40,9 @@ class PythonClass{
             // use 2 or 3 here
             PythonClass.runOnce = true
             sys = Python.import("sys")
-            let  path = "/Users/\(NSUserName())/miniconda2/envs/gymai/lib/python2.7/site-packages/"
+            let  path = "/Users/\(NSUserName())/miniconda2/envs/\(environmentName)/lib/python2.7/site-packages/"
             sys.path.append(path)
-            let  path3 = "/Users/\(NSUserName())/miniconda3/envs/gymai/lib/python2.7/site-packages/"
+            let  path3 = "/Users/\(NSUserName())/miniconda3/envs/\(environmentName)/lib/python2.7/site-packages/"
             sys.path.append(path3)
             
             

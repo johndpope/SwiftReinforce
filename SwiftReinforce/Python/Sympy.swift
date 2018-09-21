@@ -1,6 +1,10 @@
 import Foundation
 import Python
 
+// if you're using a different environment name
+// change this in schema > run > pre-actions
+// source activate gymai
+let environmentName = "gymai"
 
 class SymPy:PythonClass{
     
@@ -10,8 +14,10 @@ class SymPy:PythonClass{
         
         //TODO - test existence of this class - if not alert user to add hard coded path.
         // nb the executal is going to be executed in some temp folder it won't have relative access to this project folder
-        let  customClassPath = "/Users/admin/Documents/mlWorkspace/SwiftReinforce/SwiftReinforce/Python"
-        print("WARNING - adding hard coded path to allow access to python class:")
+        
+        print("INFO - python environment:",environmentName)
+        let  customClassPath = "/Users/jpope/Documents/tensorflowWorkspace/SwiftReinforce"
+        print("INFO - adding hard coded path to allow access to python class(you're  going to want to change this to pwd):")
         print("path:",customClassPath)
         print("\n\n\n")
         sys.path.append(customClassPath)
