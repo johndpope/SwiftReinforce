@@ -107,7 +107,9 @@ extension PythonClass{
         
         let outputs = neuralNet(images)
         
-//        let (_, predicted) = torch.max(outputs)
+        
+   
+//        let (_, predicted) = torch.max(outputs) Bug here on using max as it is a predefined swift helper
 //        print("predicted:",predicted)
         print("test images:",images)
         print("test labels:",labels)
