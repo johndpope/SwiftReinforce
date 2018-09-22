@@ -15,7 +15,7 @@ import Python
 extension PythonClass{
     
    
-    
+  
     
     func importPytorch(){
         
@@ -45,6 +45,18 @@ extension PythonClass{
         let nn = Python.import("torch.nn")
         let F = Python.import("torch.nn.functional")
         let neuralNet = Python.import("NeuralNet").NeuralNet() // hack - load local NeuralNet.py
+        
+        //  CUDA
+        //Assume that we are on a CUDA machine, then this should print a CUDA device:
+        let cuda = Python.import("torch.cuda")
+        if (cuda.is_available() == true){
+            let device = torch.device("cuda:0")
+            neuralNet.to(device)
+            print(device)
+        }else{
+            print( "using cpu")
+        }
+        
         let optim = Python.import("torch.optim")
         let criterion = nn.CrossEntropyLoss()
         let optimizer = optim.SGD(neuralNet.parameters(), lr:0.001, momentum:0.9)
@@ -87,9 +99,19 @@ extension PythonClass{
             print("Finished Training")
         }
         
+        // Test network
+        let testiter = Python.iter(testloader)
+        let data = testiter.next()
+        let images = data[0]
+        let labels = data[1]
         
+        let outputs = neuralNet(images)
         
-        
+//        let (_, predicted) = torch.max(outputs)
+//        print("predicted:",predicted)
+        print("test images:",images)
+        print("test labels:",labels)
+        print("nn outputs:",outputs)
     }
     
     func showImages(){
