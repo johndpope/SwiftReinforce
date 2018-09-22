@@ -77,8 +77,8 @@ extension PythonClass{
                 // print statistics
                 runningLoss += Double(loss.item())!
                 //print every 2000 mini-batches
-                if (idx % 2000 == 1999){
-                    print("[epoch:\(epoch), \(i + 1)] loss: \(running_loss / 2000)")
+                if (Int(idx)! % 2000 == 1999){
+                    print("[epoch:\(epoch), \(idx + 1)] loss: \(runningLoss / 2000)")
                 }
             }
 
