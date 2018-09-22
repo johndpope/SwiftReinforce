@@ -23,13 +23,13 @@ extension PythonClass{
     Type "help", "copyright", "credits" or "license" for more information.
     >>> import numpy as np
     >>> np.version.version
-    '1.8.0rc1' // make sure this is updated.
+    '1.8.0rc1' // make sure this is updated. - check sys.path importConda
      
     */
     func importNumpy(){
         np = Python.import("numpy")
         numpy = Python.import("numpy")
-        print("INFO: numpy version - ",np.version.version) // ensure that you use insert path sys.path.insert(0,path3)
+        print("INFO: 📦 numpy version - ",np.version.version) // ensure that you use insert path sys.path.insert(0,miniconda-site-package-path)
         
     }
     

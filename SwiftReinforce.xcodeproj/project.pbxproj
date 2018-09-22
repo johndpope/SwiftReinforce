@@ -65,6 +65,7 @@
 		5C7C42E52117B44C00BAB61F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		84311D8121494F020081B0E3 /* Q-LearningModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Q-LearningModel.swift"; sourceTree = "<group>"; };
 		8474987B2155C0F300A8506C /* Pytorch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pytorch.swift; sourceTree = "<group>"; };
+		8474987D2155C66D00A8506C /* NeuralNet.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = NeuralNet.py; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +90,7 @@
 				17D73030215561AC0090CE1A /* Environment.swift */,
 				17330824215182CB00CB360C /* layers.py */,
 				8474987B2155C0F300A8506C /* Pytorch.swift */,
+				8474987D2155C66D00A8506C /* NeuralNet.py */,
 				173308202151386600CB360C /* Perceptron.swift */,
 				1733081C2150287E00CB360C /* PythonClass.swift */,
 				17330823215182CB00CB360C /* rotation_matrix.py */,
