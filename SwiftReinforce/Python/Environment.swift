@@ -54,7 +54,7 @@ extension PythonClass{
     //TODO - test existence of this class - if not alert user to add hard coded path.
     // nb the executal is going to be executed in some temp folder it won't have relative access to this project folder
     func importThisProjectFolder(){
-        let  customClassPath = "/Users/jpope/Documents/tensorflowWorkspace/SwiftReinforce/SwiftReinforce/Python"
+        let  customClassPath = "/Users/admin/Documents/mlWorkspace/SwiftReinforce/SwiftReinforce/Python"
         print("INFO: adding hard coded path to allow access to python class")
         print("(you're  going to want to change this to your pwd of Python folder):")
         print("path:",customClassPath)
@@ -63,18 +63,6 @@ extension PythonClass{
     }
     
     
-    func importPytorch(){
-        
-        //            keras = Python.import("keras") // blows up //  code $HOME/.keras/keras.json  tensorflow -> theano / pip install theano - missing cPickle!
-        //  0x9 -> numpy-1.15.1
-        torch = Python.import("torch") //Fatal error: 'try!' expression unexpectedly raised an error: Python exception: module compiled against API version 0xa but this version of numpy is 0x9: file /usr/local/src/swift-build/swift/stdlib/public/core/ErrorType.swift, line 185 --see
-        
-        // 0xc -> 12
-        // 0xd -> 13
-        // 0xd -> 13
-        // Fatal error: 'try!' expression unexpectedly raised an error: Python exception: module compiled against API version 0xc but this version of numpy is 0x9: file /usr/local/src/swift-build/swift/stdlib/public/core/ErrorType.swift, line 185
-        
-        // conda install pytorch torchvision -c pytorch
-    }
+
     
 }

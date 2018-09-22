@@ -22,6 +22,7 @@
 		5C0A18292117A46F002F03E0 /* Array+NumPy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A18252117A46F002F03E0 /* Array+NumPy.swift */; };
 		5C1421422143D07C004F4CCA /* ReinforceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1421412143D07C004F4CCA /* ReinforceModel.swift */; };
 		84311D8221494F020081B0E3 /* Q-LearningModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84311D8121494F020081B0E3 /* Q-LearningModel.swift */; };
+		8474987C2155C0F300A8506C /* Pytorch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474987B2155C0F300A8506C /* Pytorch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,6 +64,7 @@
 		5C1421412143D07C004F4CCA /* ReinforceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReinforceModel.swift; sourceTree = "<group>"; };
 		5C7C42E52117B44C00BAB61F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		84311D8121494F020081B0E3 /* Q-LearningModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Q-LearningModel.swift"; sourceTree = "<group>"; };
+		8474987B2155C0F300A8506C /* Pytorch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pytorch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				173308382152DDA900CB360C /* airalcorn2.py */,
 				17D73030215561AC0090CE1A /* Environment.swift */,
 				17330824215182CB00CB360C /* layers.py */,
+				8474987B2155C0F300A8506C /* Pytorch.swift */,
 				173308202151386600CB360C /* Perceptron.swift */,
 				1733081C2150287E00CB360C /* PythonClass.swift */,
 				17330823215182CB00CB360C /* rotation_matrix.py */,
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1733081421501DEC00CB360C /* Sympy.swift in Sources */,
+				8474987C2155C0F300A8506C /* Pytorch.swift in Sources */,
 				1733082221513BF500CB360C /* PythonClass.swift in Sources */,
 				5C0A18282117A46F002F03E0 /* Utilities.swift in Sources */,
 				5C0A181021179636002F03E0 /* main.swift in Sources */,

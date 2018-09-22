@@ -41,6 +41,11 @@ pip install sklearn
 pip install Cython 
 conda install -c soumith pytorch
 
+# for keras
+pip install keras
+pip install theano 
+code $HOME/.keras/keras.json  tensorflow -> theano
+
 #for sympy
 pip install sympy
 pip install antlr4-python2-runtime // for loading latex 
