@@ -28,7 +28,22 @@ brew install cmake boost boost-python sdl2 swig wget
 
 ## CONDA     - critical use 2.7.9 to avoid missing python symbols  (__PyCodecInfo_GetIncrementalDecoder)     
 https://conda.io/docs/_downloads/conda-cheatsheet.pdf     
+
       
+**setting up miniconda**      
+brew install wget      
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh      
+chmod +x Miniconda3-latest-MacOSX-x86_64.sh      
+./Miniconda3-latest-MacOSX-x86_64.sh      
+      
+      
+**Add conda to user path**      
+for zsh       
+code ~/.zshrc      
+export PATH="/Users/YOURUSERNAMENAMEHERE/miniconda3/bin:$PATH"      
+RESTART TERMINAL!!      
+
+
 ```
 // https://conda.io/miniconda.html 
 conda create -n gymai  python=2.7.9
@@ -44,7 +59,7 @@ conda install -c soumith pytorch
 # for keras
 pip install keras
 pip install theano 
-code $HOME/.keras/keras.json  tensorflow -> theano
+code $HOME/.keras/keras.json    # update tensorflow -> theano
 
 #for sympy
 pip install sympy
