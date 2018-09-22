@@ -10,9 +10,11 @@ import Foundation
 import Python
 
 
-
+// Port of this code
+//https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html
 extension PythonClass{
     
+   
     
     
     func importPytorch(){
@@ -42,34 +44,44 @@ extension PythonClass{
         
         let nn = Python.import("torch.nn")
         let F = Python.import("torch.nn.functional")
-        let neuralNet = Python.import("NeuralNet").NeuralNet() //.py
+        let neuralNet = Python.import("NeuralNet").NeuralNet() // hack - load local NeuralNet.py
         let optim = Python.import("torch.optim")
         let criterion = nn.CrossEntropyLoss()
         let optimizer = optim.SGD(neuralNet.parameters(), lr:0.001, momentum:0.9)
         
         var  runningLoss = 0.0
         
-        for epoch in 0...2{
+        for _ in 0...2{
             runningLoss = 0.0
-//            for (i, data) in Python.enumerate(trainloader, 0){
-//                // get the inputs
-//                let inputs, labels = data
-//                
-//                //  zero the parameter gradients
-//                optimizer.zero_grad()
-//                
-//                //  forward + backward + optimize
-//                outputs = net(inputs)
-//                loss = criterion(outputs, labels)
-//                loss.backward()
-//                optimizer.step()
-//                
-//                // print statistics
-//                running_loss += loss.item()
-//            }
-//
-//            if i % 2000 == 1999:    # print every 2000 mini-batches
-//            print("[%d, %5d] loss: %.3f" %  (epoch + 1, i + 1, running_loss / 2000))
+            
+
+            // TODO - fix this wart - trainloader.enumerated() / Python.enumerate(trainloader)
+            let dataIter:PythonObject = Python.iter(trainloader)
+            
+            //idx: 12499
+            for idx in trainloader.indices{
+                let data = dataIter.next()
+
+                //// get the inputs
+                let inputs = data[0]
+                let labels = data[1]
+                //  zero the parameter gradients
+                optimizer.zero_grad()
+
+                //  forward + backward + optimize
+                let outputs = neuralNet(inputs)
+                let loss = criterion(outputs, labels)
+                loss.backward()
+                optimizer.step()
+
+                // print statistics
+                runningLoss += Double(loss.item())!
+                //print every 2000 mini-batches
+                if (i % 2000 == 1999){
+                    print("[epoch:\(epoch), \(i + 1)] loss: \(running_loss / 2000)")
+                }
+            }
+
             runningLoss = 0.0
             
             print("Finished Training")
@@ -80,4 +92,26 @@ extension PythonClass{
         
     }
     
+    func showImages(){
+        /*import matplotlib.pyplot as plt
+         import numpy as np
+         
+         # functions to show an image
+         
+         
+         def imshow(img):
+         img = img / 2 + 0.5     # unnormalize
+         npimg = img.numpy()
+         plt.imshow(np.transpose(npimg, (1, 2, 0)))
+         
+         
+         # get some random training images
+         dataiter = iter(trainloader)
+         images, labels = dataiter.next()
+         
+         # show images
+         imshow(torchvision.utils.make_grid(images))
+         # print labels
+         print(' '.join('%5s' % classes[labels[j]] for j in range(4)))*/
+    }
 }
