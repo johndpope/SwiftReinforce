@@ -20,10 +20,28 @@ class SymPy:PythonClass{
         testLambdifyStr()
         //       lambdaSinTest()
         
-        
+        testQuantum()
+        testPytorch()
     }
     
 
+    func testQuantum(){
+        /*
+     fromfrom  sympysympy  importimport  sqrtsqrt,,  symbolssymbols, Rational
+     from sympy import expand, Eq, Symbol, simplify, exp, sin
+     from sympy.physics.quantum import *
+     from sympy.physics.quantum.qubit import *
+     from sympy.physics.quantum.gate import *
+     from sympy.physics.quantum.grover import *
+     from sympy.physics.quantum.qft import QFT, IQFT, Fourier
+     from sympy.physics.quantum.circuitplot import circuit_plot
+     */
+        
+        let qt = Python.import("sympy.physics.quantum.qft")
+        let fourier = qt.QFT(0,3).decompose()
+        print("fourier:",fourier)
+        
+    }
     //  https://github.com/fsamija/ethicon/blob/479b7c916d0fc97d05ff94a1694fbc13a7f1a9c3/venvs/edxapp/lib/python2.7/site-packages/sympy/utilities/lambdify.py#L121
     // the lambdify function breaks out of the box - https://github.com/tensorflow/swift/issues/72
     // use lambdastr to get around this - TODO - work out how to eval it.

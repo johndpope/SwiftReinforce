@@ -24,6 +24,9 @@ extension PythonClass{
         print("import torch")
         torch = Python.import("torch")
         
+    }
+    
+    func testPytorch(){
         // IMPORTANT - hack required to get  torchvision   to load
         // in your Users/YOURUSERNAMEHERE/miniconda3/envs/gymai/lib/python2.7/site-packages/
         // rename torchvision-0.2.1-py2.7.egg file to .zip - extract out torchvision folder to site-packages root folder
