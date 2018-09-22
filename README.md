@@ -54,12 +54,14 @@ pip install sklearn
 
 # for pytorch
 pip install Cython 
-conda install -c soumith pytorch
+pip install torch
+pip install torchvision
 
 # for keras
 pip install keras
 pip install theano 
 code $HOME/.keras/keras.json    # update tensorflow -> theano
+
 
 #for sympy
 pip install sympy
@@ -68,6 +70,10 @@ pip install ipython // for latext latex_to_png
 
 ```
      
+     
+ // IMPORTANT - hack required to get  torchvision   to load
+ // in you Users/admin/miniconda3/envs/gymai/lib/python2.7/site-packages/
+ // rename torchvision-0.2.1-py2.7.egg file to .zip - extract out torch ision folder to site-packages
      
      
 To connect the conda environment / (which has been activated) - we need to configure  

@@ -47,7 +47,6 @@
 		17330824215182CB00CB360C /* layers.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = layers.py; sourceTree = "<group>"; };
 		173308252151874700CB360C /* MountainCarRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MountainCarRunner.swift; sourceTree = "<group>"; };
 		173308382152DDA900CB360C /* airalcorn2.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = airalcorn2.py; sourceTree = "<group>"; };
-		173B8E502153EBB7003A7672 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		173B8E552153FB63003A7672 /* libtensorflow.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtensorflow.so; path = "../../../../../Library/Developer/Toolchains/swift-tensorflow-DEVELOPMENT-2018-09-17-a.xctoolchain/usr/lib/swift/macosx/libtensorflow.so"; sourceTree = "<group>"; };
 		173B8E562153FB63003A7672 /* libtensorflow_framework.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtensorflow_framework.so; path = "../../../../../Library/Developer/Toolchains/swift-tensorflow-DEVELOPMENT-2018-09-17-a.xctoolchain/usr/lib/swift/macosx/libtensorflow_framework.so"; sourceTree = "<group>"; };
 		17D73030215561AC0090CE1A /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -85,7 +84,6 @@
 		1733080F21501DEC00CB360C /* Python */ = {
 			isa = PBXGroup;
 			children = (
-				173B8E502153EBB7003A7672 /* Readme.md */,
 				173308382152DDA900CB360C /* airalcorn2.py */,
 				17D73030215561AC0090CE1A /* Environment.swift */,
 				17330824215182CB00CB360C /* layers.py */,
