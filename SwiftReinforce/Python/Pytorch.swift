@@ -51,7 +51,7 @@ extension PythonClass{
         
         var  runningLoss = 0.0
         
-        for _ in 0...2{
+        for epoch in 0...2{
             runningLoss = 0.0
             
 
@@ -77,7 +77,7 @@ extension PythonClass{
                 // print statistics
                 runningLoss += Double(loss.item())!
                 //print every 2000 mini-batches
-                if (i % 2000 == 1999){
+                if (idx % 2000 == 1999){
                     print("[epoch:\(epoch), \(i + 1)] loss: \(running_loss / 2000)")
                 }
             }
