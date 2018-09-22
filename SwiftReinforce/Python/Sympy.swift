@@ -8,7 +8,8 @@ class SymPy:PythonClass{
     // https://github.com/Sheyne/Neural/blob/1b0563a65480448a48b395f74a70a7d949112f42/sympy_test.py
     func run(){
         importSysPath()
-                
+    
+        print("INFO:👨‍🔬 testing sympy")
         testLambda = Python.import("test_lambda")
         testImplementedFunction()
         

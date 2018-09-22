@@ -40,9 +40,10 @@ extension PythonClass{
     //TODO - test existence of this class - if not alert user to add hard coded path.
     // nb the executal is going to be executed in some temp folder it won't have relative access to this project folder
     func importThisProjectFolder(){
-        let  customClassPath = "/Users/admin/Documents/mlWorkspace/SwiftReinforce/SwiftReinforce/Python"
+        let projectFolder = "/Users/johndpope/Documents/gitWorkspace/SwiftReinforce"
+        let  customClassPath = "/\(projectFolder)/SwiftReinforce/Python"
         print("WARNING: adding hard coded path to allow access to python class")
-        print("(you're  going to want to change this to your pwd of Python folder):")
+        print("(you're  going to want to update projectFolder in Environment.swift):")
         print("path:",customClassPath)
         print("\n\n\n")
         sys.path.append(customClassPath)

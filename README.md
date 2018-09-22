@@ -60,13 +60,15 @@ pip install torchvision
 # for keras
 pip install keras
 pip install theano 
-code $HOME/.keras/keras.json    # update tensorflow -> theano
+
 
 
 #for sympy
 pip install sympy
-pip install antlr4-python2-runtime // for loading latex 
-pip install ipython // for latext latex_to_png
+# for loading latex 
+pip install antlr4-python2-runtime 
+#for latext latex_to_png
+pip install ipython     
 
 ```
      
@@ -83,7 +85,6 @@ schema >  Run > Pre-actions
 
 ```
 source activate gymai
-./SwiftReinforce
 ```
 
 

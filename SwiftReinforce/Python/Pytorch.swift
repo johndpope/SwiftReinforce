@@ -19,14 +19,16 @@ extension PythonClass{
     
     func importPytorch(){
         
-        print("import keras")
-        keras = Python.import("keras")
+        //print("import keras")
+        //keras = Python.import("keras") //Failed to load the native TensorFlow runtime. -
+        // code $HOME/.keras/keras.json    # update tensorflow -> theano
         print("import torch")
         torch = Python.import("torch")
         
     }
     
     func testPytorch(){
+        print("INFO:⛳️ Testing CIFAR PyTorch....")
         // IMPORTANT - hack required to get  torchvision   to load
         // in your Users/YOURUSERNAMEHERE/miniconda3/envs/gymai/lib/python2.7/site-packages/
         // rename torchvision-0.2.1-py2.7.egg file to .zip - extract out torchvision folder to site-packages root folder
